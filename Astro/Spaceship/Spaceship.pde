@@ -4,10 +4,15 @@ private PVector position;
 public Spaceship()
 {
   health = 100; // assuming 100 is max health
-  position = new PVector(0, 0);
+  position = new PVector(width, height);
 }
 
-
+void display()
+{
+  color c = color(0, 0, 0);
+  fill(0);
+  circle(position.x, position.y, 100);
+}
 
 //public static void move()
 //{
