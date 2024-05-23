@@ -11,11 +11,14 @@ info
 info
 
 
-## GROUP MEMBER 2
+## GROUP MEMBER 2 (moyo)
 
-### date x
+### date 05/22
 
-info
+tried out the branch and merging kinda
+created processing folder with run, Spaceship, and bullet files
+made a placeholder spaceship display on screen (a circle)
+tried to make the bullet's move() but can yet asscces the spaceship's position
 
 ### date y
 
