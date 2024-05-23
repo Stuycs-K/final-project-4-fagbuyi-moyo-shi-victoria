@@ -1,16 +1,28 @@
 private int health;
-private PVector position;
+private int speed;
+ private PImage imageS;
+private PVector position, velocity;
+boolean wPressed, aPressed, sPressed, dPressed;
 
 public class Spaceship
 {
   public Spaceship()
   {
+    imageS=loadImage("Valkyrie.png");
     health = 100; // assuming 100 is max health
     position = new PVector(0 + 100, 0 + 100);
   }
   
+
+  
+  
+  
   public void move()
   {
+    if(aPressed==true)
+      velocity.x=-speed;
+      
+      position.x+=velocity.x;
   }
   
   public void shoot()
