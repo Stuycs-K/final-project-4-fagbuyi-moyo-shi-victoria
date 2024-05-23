@@ -1,14 +1,16 @@
 private int damage;
 private PVector pos;
 
-public Bullet()
+public void Bullet()
 {
   damage = 2;
 }
 
-public void move(Spaceship pop)
+public void move()
 {
-  pos = new PVector (pop.x, pop.y); // this being the spaceship
+  // so bullet gets locat of spaceship
+  // and then moves.
+  pos = new PVector (this.x, this.y); // idk why this give error
 }
 
 public void applyDamage()
