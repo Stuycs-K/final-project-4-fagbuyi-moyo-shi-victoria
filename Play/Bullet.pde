@@ -12,11 +12,15 @@ public class Bullet
   {
     // so bullet gets locat of spaceship
     // and then moves.
-    //pos = new PVector (this.x, this.y); // idk why this give error
+    //pos = new PVector (this.x, this.y);
   }
   
   public void applyDamage()
   {
   }
+ 
+ void display()
+ {
+ }
  
 }
