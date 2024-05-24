@@ -12,7 +12,7 @@ void setup()
 void draw()
 {
   player.display();
-  image(imageS,0,0);
+ // image(imageS,0,0);
 }
 
   void keyPressed(){

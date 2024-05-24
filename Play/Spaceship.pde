@@ -8,7 +8,7 @@ public class Spaceship
 {
   public Spaceship()
   {
-    imageS=loadImage("Valkyrie.png");
+   // imageS=loadImage("Valkyrie.png");
     health = 100; // assuming 100 is max health
     position = new PVector(0 + 100, 0 + 100);
   }
@@ -23,6 +23,8 @@ public class Spaceship
       velocity.x=-speed;
       
       position.x+=velocity.x;
+      circle(position.x, position.y, 100);
+      
   }
   
   public void shoot()
