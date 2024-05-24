@@ -24,10 +24,10 @@ public class Bullet
   
   public void move()
   {
-    // so bullet gets locat of spaceship
-    // and then moves.
-    //pos = new PVector (this.x, this.y);
-    
+    //put in draw method
+    pos.set(pos.x + 1, pos.y);
+    ellipse(pos.x, pos.y, 30, 15);
+
   }
   
   public void applyDamage()

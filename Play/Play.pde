@@ -8,12 +8,13 @@ void setup()
   //moving backgroud somewhere yeah
   player = new Spaceship();
   place = new Bullet();
+  player.display();
+  PVector loc = player.getPos();
+  place.spawn(loc);
 }
 
 
 void draw()
 {
-  player.display();
-  PVector loc = player.getPos();
-  place.spawn(loc);
+  place.move();
 }
