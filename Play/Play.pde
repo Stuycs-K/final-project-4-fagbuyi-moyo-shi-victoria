@@ -5,18 +5,16 @@ ArrayList<Spaceship> enemies;
 
 void setup()
 {
-  size(1200, 1200); //can cahnge
-  //moving backgroud somewhere yeah
+  size(1200, 1200);
   player = new Spaceship();
-  player.display();
   PVector loc = player.getPos();
   place = new Bullet(loc);
-  //place.display();
 }
 
 
 void draw()
 {
-  //place.display();
+  background(128, 128, 128);
+  player.display();
   place.move();
 }
