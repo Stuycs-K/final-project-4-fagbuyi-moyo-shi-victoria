@@ -8,12 +8,12 @@ public class Spaceship
 {
   public Spaceship()
   {
-    imageS=loadImage("Valkyrie.png");
+    imageS=loadImage("file.png");
     health = 100; // assuming 100 is max health
     position = new PVector(0 + 100, 0 + 100);
     velocity=new PVector(0,0);
     circle(position.x, position.y, 100);
-     image(imageS,position.x, position.y);
+     //image(imageS,position.x, position.y);
   }
   
 
@@ -31,7 +31,7 @@ public class Spaceship
       if(sPressed==true)
       position.y+=10;
      // position.x+=velocity.x;
-      circle(position.x, position.y, 100);
+      //circle(position.x, position.y, 100);
            image(imageS,position.x, position.y);
       
   }
