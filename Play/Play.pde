@@ -1,5 +1,6 @@
 Spaceship player;
 Bullet place;
+int countdown;
 ArrayList<Spaceship> enemies;
 
 void setup()
@@ -10,7 +11,7 @@ void setup()
   player.display();
   PVector loc = player.getPos();
   place = new Bullet(loc);
-  place.display();
+  //place.display();
 }
 
 
