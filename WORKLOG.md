@@ -6,7 +6,8 @@
 
 Worked on spaceship class and wasd movement using keyPressed and keyReleased. Trying to get physics to work and for movement to show up on screen.
 
-### date y
+### date 5/24
+got spaceship png to move with wasd. Gave up on velocity and just used pixels. Removed spaceship png background
 
 info
 
