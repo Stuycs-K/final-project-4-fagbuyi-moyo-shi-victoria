@@ -21,6 +21,6 @@ created processing folder with run, Spaceship, and bullet files
 made a placeholder spaceship display on screen (a circle)
 tried to make the bullet's move() but can yet asscces the spaceship's position
 
-### date y
+### date 05/24
 
-info
+bullet png spawns at spaceship postion, moves in a straight line.
