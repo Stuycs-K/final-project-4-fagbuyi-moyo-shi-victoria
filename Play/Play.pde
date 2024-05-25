@@ -11,8 +11,10 @@ void setup()
 
 void draw()
 {
+  background(200);
   player.display();
  // image(imageS,0,0);
+ player.move();
 }
 
   void keyPressed(){
