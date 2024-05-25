@@ -2,9 +2,9 @@
 
 ## GROUP MEMBER 1
 
-### date x
+### date 5/23
 
-info
+Worked on spaceship class and wasd movement using keyPressed and keyReleased. Trying to get physics to work and for movement to show up on screen.
 
 ### date y
 
