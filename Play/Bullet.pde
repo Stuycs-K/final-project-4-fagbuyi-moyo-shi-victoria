@@ -7,7 +7,15 @@ public class Bullet
 {
   public Bullet(PVector spawn)
   {
-    damage = 2;
+    damage = 5;
+    pos = new PVector(spawn.x + 40, spawn.y + 10);
+    photo = loadImage("bullet.jpg");
+    photo.resize(40, 40);
+  }
+  
+  public Bullet(PVector spawn, int dam)
+  {
+    damage = dam;
     pos = new PVector(spawn.x + 40, spawn.y + 10);
     photo = loadImage("bullet.jpg");
     photo.resize(40, 40);
@@ -23,7 +31,7 @@ public class Bullet
   {
    if (PVector.dist(tar.getPos(), pos) <= 20)
    {
-     tar.loseHealth();
+     tar.loseHealth(damage);
    }
   }
  

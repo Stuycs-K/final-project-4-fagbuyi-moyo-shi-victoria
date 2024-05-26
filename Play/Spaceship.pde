@@ -23,9 +23,9 @@ public class Spaceship
   {
   }
   
-  public void loseHealth()
+  public void loseHealth(int dam)
   {
-    health -= 5;
+    health -= dam;
     if (health < 0)
     {
       health = 0;
