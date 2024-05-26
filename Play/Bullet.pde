@@ -19,9 +19,12 @@ public class Bullet
     image(photo, pos.x, pos.y);
   }
   
-  public void applyDamage()
+  public void applyDamage(Spaceship tar)
   {
-    
+   if (PVector.dist(tar.getPos(), pos) <= 20)
+   {
+     tar.loseHealth();
+   }
   }
  
 }

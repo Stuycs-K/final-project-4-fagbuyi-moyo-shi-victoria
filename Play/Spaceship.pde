@@ -9,6 +9,12 @@ public class Spaceship
     position = new PVector(0 + 100, 0 + 100);
   }
   
+  public Spaceship(int x, int y)
+  {
+    health = 100; // assuming 100 is max health
+    position = new PVector(x, y);
+  }
+  
   public void move()
   {
   }
@@ -24,6 +30,11 @@ public class Spaceship
     {
       health = 0;
     }
+  }
+  
+  public int getHealth()
+  {
+    return health;
   }
   
   public PVector getPos() // only putting now so bullet can get postion of um spacehip
