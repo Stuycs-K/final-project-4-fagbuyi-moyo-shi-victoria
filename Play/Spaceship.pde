@@ -19,12 +19,18 @@ public class Spaceship
   
   public void loseHealth()
   {
+    health -= 5;
+    if (health < 0)
+    {
+      health = 0;
+    }
   }
   
   public PVector getPos() // only putting now so bullet can get postion of um spacehip
   {
     return position;
   }
+  
   
   void display()
   {
