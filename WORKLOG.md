@@ -24,3 +24,7 @@ tried to make the bullet's move() but can yet asscces the spaceship's position
 ### date 05/24
 
 bullet png spawns at spaceship postion, moves in a straight line.
+
+### date 05/25
+
+bullet detects spaceship and deals it damage. added another bullet construtor so you can specify damage.
