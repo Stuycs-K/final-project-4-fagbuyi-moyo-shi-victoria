@@ -6,7 +6,8 @@
 
 Worked on spaceship class and wasd movement using keyPressed and keyReleased. Trying to get physics to work and for movement to show up on screen.
 
-### date y
+### date 5/24
+got spaceship png to move with wasd. Gave up on velocity and just used pixels. Removed spaceship png background
 
 info
 
@@ -20,6 +21,14 @@ created processing folder with run, Spaceship, and bullet files
 made a placeholder spaceship display on screen (a circle)
 tried to make the bullet's move() but can yet asscces the spaceship's position
 
-### date y
+### date 05/24
 
-info
+bullet png spawns at spaceship postion, moves in a straight line.
+
+### date 05/25
+
+bullet detects spaceship and deals it damage. added another bullet construtor so you can specify damage.
+
+### date 05/26
+
+spaceship spawns bullets, but only one will move at a time. and speed keeps increasing with each bullet spawned. bullets should probably die on imapct too.
