@@ -28,3 +28,7 @@ bullet png spawns at spaceship postion, moves in a straight line.
 ### date 05/25
 
 bullet detects spaceship and deals it damage. added another bullet construtor so you can specify damage.
+
+### date 05/26
+
+spaceship spawns bullets, but only one will move at a time. and speed keeps increasing with each bullet spawned. bullets should probably die on imapct too.
