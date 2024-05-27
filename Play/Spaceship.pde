@@ -1,5 +1,6 @@
 private int health;
 private PVector position;
+//boolean qPressed;
 
 public class Spaceship
 {
@@ -19,8 +20,11 @@ public class Spaceship
   {
   }
   
-  public void shoot()
+  public Bullet shoot()
   {
+    //only callled when q is pressed
+      Bullet bull = new Bullet(position);
+      return bull;
   }
   
   public void loseHealth(int dam)
