@@ -12,6 +12,7 @@ public class Bullet
     pos = new PVector(spawnPoint.x + 40, spawnPoint.y + 10);
     photo = loadImage("bullet.jpg");
     photo.resize(40, 40);
+    alive = true;
   }
   
   public Bullet(PVector spawnPoint, int dam)
@@ -34,7 +35,7 @@ public class Bullet
   public void move() //<>//
   {
     pos.set(pos.x + 1, pos.y);
-    image(photo, pos.x, pos.y);
+    //image(photo, pos.x, pos.y);
   }
   
   public void allMove(ArrayList<Bullet> bulls)
@@ -57,6 +58,11 @@ public class Bullet
   public boolean getStatus()
   {
     return alive;
+  }
+  
+  public PVector getPos()
+  {
+    return pos;
   }
  
 }
