@@ -1,5 +1,5 @@
 Spaceship player;
-//Bullet place;
+Bullet place;
 ArrayList<Bullet> bullets;
 int countdown;
 ArrayList<Spaceship> enemies;
@@ -9,8 +9,8 @@ void setup()
   size(1200, 1200);
   player = new Spaceship(600, 100);
   bullets = new ArrayList<Bullet>();
-  //PVector loc = player.getPos();
-  //place = new Bullet(new PVector(100, 100));
+  PVector loc = player.getPos();
+  place = new Bullet(new PVector(100, 100));
 }
 
 
@@ -24,14 +24,19 @@ void keyPressed()
 
 void draw()
 {
-  background(128, 128, 128);
+  //background(128, 128, 128);
   player.display();
-  //for (Bullet bull : bullets)
-  //{
-  //  bull.move();
-  //  bull.applyDamage(player); //should apply dxdamdge to nearest enemy
-  //}
-  //Bullet.allMove(bullets);
+  for (Bullet bull : bullets)
+  {
+    bull.move();
+    bull.applyDamage(player); //should apply dxdamdge to nearest enemy
+    if (bull.getStatus() == false)
+    {
+      bullets.remove(bull);
+    }
+  }
+  place.load(bullets);
+  place.allMove(bullets);
   if (player.getHealth() < 95)
   {
     color c = color(69, 66, 245);

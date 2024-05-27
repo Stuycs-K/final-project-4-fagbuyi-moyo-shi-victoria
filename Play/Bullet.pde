@@ -1,6 +1,7 @@
 private int damage;
 private PVector pos;
 private PImage photo;
+boolean alive;
 
 
 public class Bullet
@@ -21,6 +22,15 @@ public class Bullet
     photo.resize(40, 40);
   }
   
+  public void load(ArrayList<Bullet> bulls)
+  {
+    for (Bullet bull : bulls)
+    {
+      photo = loadImage("bullet.jpg");
+      photo.resize(40, 40);
+    }
+  }
+  
   public void move() //<>//
   {
     pos.set(pos.x + 1, pos.y);
@@ -31,8 +41,7 @@ public class Bullet
   {
     for (Bullet bull : bulls)
     {
-      pos.set(pos.x + 1, pos.y);
-      image(photo, pos.x, pos.y);
+      bull.move();
     }
   }
   
@@ -41,7 +50,13 @@ public class Bullet
    if (PVector.dist(tar.getPos(), pos) <= 20)
    {
      tar.loseHealth(damage);
+     alive = false;
    }
+  }
+  
+  public boolean getStatus()
+  {
+    return alive;
   }
  
 }
