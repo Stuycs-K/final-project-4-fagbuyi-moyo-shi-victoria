@@ -1,4 +1,5 @@
 Player player;
+E1 enemy1;
 ArrayList<Spaceship> enemies;
 
 void setup()
@@ -7,14 +8,18 @@ void setup()
   size(1200, 1200); //can cahnge
   //moving backgroud somewhere yeah
   player = new Player();
+  enemy1 =new E1();
 }
 
 void draw()
 {
   background(200);
-  player.display();
+   enemy1.display();
+ player.display();
+
  // image(imageS,0,0);
- player.move();
+ //player.move();
+//d enemy1.display();
 }
 
   void keyPressed(){
