@@ -2,7 +2,7 @@ private int health;
 private int speed;
  private PImage imageS;
 private PVector position, velocity;
-boolean wPressed, aPressed, sPressed, dPressed;
+
 
 public class Spaceship
 {
@@ -22,7 +22,7 @@ public class Spaceship
   
   public void move()
   {
-    if(aPressed==true)
+    /*if(aPressed==true)
       position.x-=10;
      if(dPressed==true)
       position.x+=10;
@@ -33,7 +33,7 @@ public class Spaceship
      // position.x+=velocity.x;
       //circle(position.x, position.y, 100);
            image(imageS,position.x, position.y);
-      
+      */
   }
   
   public void shoot()
