@@ -1,6 +1,6 @@
 boolean wPressed, aPressed, sPressed, dPressed;
 public class Player extends Spaceship{
-  
+//boolean wPressed, aPressed, sPressed, dPressed;  
   
   public Player()
   {

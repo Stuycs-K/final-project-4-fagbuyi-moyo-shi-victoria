@@ -10,26 +10,15 @@ void setup()
 
   size(1200, 1200);
   bullets = new ArrayList<Bullet>();
-  //PVector loc = player.getPos();
   place = new Bullet(new PVector(600, 100));
-  img = loadImage("bullet.jpg");
   //moving backgroud somewhere yeah
-  //player = new Spaceship();
-  
   player = new Player();
 }
 
 void draw()
 {
   background(200);
-  //player.display();
- // image(imageS,0,0);
  player.move();
- for (Bullet bull : bullets)
- {
-   PVector loc = player.getPos();
-  image(img, loc.x, loc.y, 40, 40);
- }
  place.allMove(bullets);
 }
   void keyPressed()
@@ -46,6 +35,7 @@ void draw()
   {
     bullets.add(player.shoot());
   }
+  
   }
     
       void keyReleased(){
@@ -59,16 +49,3 @@ void draw()
        dPressed=false;
   }
   
-void bullets()
-{
-   for (Bullet bull : bullets)
-  {
-    bull.move();
-    image(img, bull.getPos().x, bull.getPos().y, 40, 40);
-    bull.applyDamage(player); //should apply dxdamdge to nearest enemy
-    if (bull.getStatus() == false)
-    {
-      bullets.remove(bull);
-    }
-  }
-}

@@ -1,11 +1,11 @@
-private int health;
-private int speed;
-private PImage imageS;
-private PVector position, velocity;
-
 
 public class Spaceship
 {
+  
+   int health;
+   int speed;
+   PImage imageS;
+   PVector position, velocity;
     public Spaceship()
   {
     health = 100; // assuming 100 is max health

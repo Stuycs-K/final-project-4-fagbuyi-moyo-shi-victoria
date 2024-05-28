@@ -1,11 +1,11 @@
-private int damage;
-private PVector pos;
-private PImage photo;
-boolean alive;
-
 
 public class Bullet
 {
+  private int damage;
+  private PVector pos;
+  private PImage photo;
+  boolean alive;
+  
   public Bullet(PVector spawnPoint)
   {
     damage = 5;
@@ -21,15 +21,6 @@ public class Bullet
     pos = new PVector(spawnPoint.x + 40, spawnPoint.y + 10);
     photo = loadImage("bullet.jpg");
     photo.resize(40, 40);
-  }
-  
-  public void load(ArrayList<Bullet> bulls)
-  {
-    for (Bullet bull : bulls)
-    {
-      photo = loadImage("bullet.jpg");
-      photo.resize(40, 40);
-    }
   }
   
   public void move() //<>//
@@ -55,14 +46,13 @@ public class Bullet
    }
   }
   
-  public boolean getStatus()
+  public boolean getStatus() //also might be unneeded
   {
     return alive;
   }
   
-  public PVector getPos()
-  {
-    return pos;
-  }
- 
+  //public PVector getPos() //might be unneeded
+  //{
+  //  return pos;
+  //}
 }
