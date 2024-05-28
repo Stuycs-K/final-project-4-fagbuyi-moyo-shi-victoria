@@ -1,6 +1,5 @@
 Spaceship player;
 ArrayList<Spaceship> enemies;
-
 void setup()
 {
   
