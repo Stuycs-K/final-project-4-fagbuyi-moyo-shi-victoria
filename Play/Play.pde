@@ -18,7 +18,8 @@ void draw()
  player.display();
 
  // image(imageS,0,0);
- //player.move();
+ player.move();
+ enemy1.move();
 //d enemy1.display();
 }
 

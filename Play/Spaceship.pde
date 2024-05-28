@@ -1,11 +1,12 @@
-private int health;
-private int speed;
- private PImage imageS;
-private PVector position, velocity;
+
 
 
 public class Spaceship
 {
+   int health;
+ int speed;
+  PImage imageS;
+ PVector position, velocity;
   public Spaceship()
   {
     /*

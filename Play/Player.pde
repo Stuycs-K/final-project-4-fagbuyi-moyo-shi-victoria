@@ -34,6 +34,6 @@ public class Player extends Spaceship{
     //color c = color(0, 0, 0);
    // fill(0);
     //circle(position.x, position.y, 100);
-    image(imageS,position.x, position.y);
+   // image(imageS,position.x, position.y);
   }
 }
