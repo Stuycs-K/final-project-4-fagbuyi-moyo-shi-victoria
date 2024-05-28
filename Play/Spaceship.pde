@@ -1,6 +1,6 @@
 private int health;
 private int speed;
- private PImage imageS;
+private PImage imageS;
 private PVector position, velocity;
 
 

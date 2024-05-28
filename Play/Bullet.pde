@@ -11,7 +11,7 @@ public class Bullet
     damage = 5;
     pos = new PVector(spawnPoint.x + 40, spawnPoint.y + 10);
     photo = loadImage("bullet.jpg");
-    photo.resize(40, 40);
+    //photo.resize(40, 40);
     alive = true;
   }
   
@@ -35,7 +35,7 @@ public class Bullet
   public void move() //<>//
   {
     pos.set(pos.x + 1, pos.y);
-    //image(photo, pos.x, pos.y);
+    image(photo, pos.x, pos.y, 40, 40);
   }
   
   public void allMove(ArrayList<Bullet> bulls)

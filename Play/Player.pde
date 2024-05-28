@@ -33,4 +33,9 @@ public class Player extends Spaceship{
   {
     return super.shoot();
   }
+  
+  public PVector getPos()
+  {
+    return super.getPos();
+  }
 }
