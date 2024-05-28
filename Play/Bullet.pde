@@ -9,7 +9,7 @@ public class Bullet
   public Bullet(PVector spawnPoint)
   {
     damage = 5;
-    pos = new PVector(spawnPoint.x + 40, spawnPoint.y + 10);
+    pos = new PVector(spawnPoint.x + 75, spawnPoint.y + 10);
     photo = loadImage("bullet.jpg");
     //photo.resize(40, 40);
     alive = true;
@@ -18,14 +18,14 @@ public class Bullet
   public Bullet(PVector spawnPoint, int dam)
   {
     damage = dam;
-    pos = new PVector(spawnPoint.x + 40, spawnPoint.y + 10);
+    pos = new PVector(spawnPoint.x + 75, spawnPoint.y + 10);
     photo = loadImage("bullet.jpg");
     photo.resize(40, 40);
   }
   
   public void move() //<>//
   {
-    pos.set(pos.x + 1, pos.y);
+    pos.set(pos.x + 5, pos.y);
     image(photo, pos.x, pos.y, 40, 40);
   }
   

@@ -25,16 +25,13 @@ void draw()
   {
     if(key=='w')
       wPressed=true;
-   else if(key=='a')
+     else if(key=='a')
        aPressed=true;
-  else if(key=='s')
+    else if(key=='s')
       sPressed=true;
      else if(key=='d')
        dPressed=true;
-     if (key== 'q')
-  {
-    bullets.add(player.shoot());
-  }
+    if (key== 'q') bullets.add(player.shoot());
   
   }
     

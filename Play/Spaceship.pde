@@ -1,7 +1,6 @@
 
 public class Spaceship
 {
-  
    int health;
    int speed;
    PImage imageS;
