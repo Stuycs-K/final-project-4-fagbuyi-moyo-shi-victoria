@@ -9,8 +9,11 @@ Worked on spaceship class and wasd movement using keyPressed and keyReleased. Tr
 ### date 5/24
 got spaceship png to move with wasd. Gave up on velocity and just used pixels. Removed spaceship png background
 
-info
+### date 5/26
+created Enemy and Player subclasses, also E1, E2, E3 subclasses and transfered code from main spaceship classs to indivdual classes
 
+### date 5/27
+loaded in enemy spaceship, problem with nonstatic variables, not sure how to fix
 
 ## GROUP MEMBER 2 (moyo)
 
