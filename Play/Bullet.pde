@@ -23,7 +23,7 @@ public class Bullet
     photo.resize(40, 40);
   }
   
-  public void move() //<>//
+  public void move() //<>// //<>//
   {
     pos.set(pos.x, pos.y - 5);
     image(photo, pos.x, pos.y, 40, 40);
@@ -33,22 +33,34 @@ public class Bullet
   {
     for (Bullet bull : bulls)
     {
-      bull.move();
+      if (bull.getStatus()) bull.move();
+      else
+      {
+        bullets.remove(bull);
+      }
     }
   }
   
-  public void applyDamage(Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
+  public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
   {
-   if (PVector.dist(tar.getPos(), pos) <= 20)
-   {
-     tar.loseHealth(damage);
-     alive = false;
-   }
+    for (Bullet bull : bulls)
+    {
+      if (PVector.dist(tar.getPos(), bull.pos) <= 20)
+     {
+       tar.loseHealth(damage);
+       bull.setStatus(false);
+     }
+    }
   }
   
   public boolean getStatus() //also might be unneeded
   {
     return alive;
+  }
+  
+  public void setStatus(boolean stat)
+  {
+    alive = stat;
   }
   
   //public PVector getPos() //might be unneeded

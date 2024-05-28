@@ -1,8 +1,7 @@
 Bullet place;
 ArrayList<Bullet> bullets;
-int countdown;
+E1 enemy1;
 ArrayList<Spaceship> enemies;
-PImage img;
 Player player;
 
 void setup()
@@ -13,33 +12,30 @@ void setup()
   place = new Bullet(new PVector(600, 100));
   //moving backgroud somewhere yeah
   player = new Player();
+  enemy1 = new E1();
 }
 
 void healthBar(Player player)
 {
   PVector loc = player.getPos();
   int health =  player.getHealth();
-  //health = health /100;
-  //fill(255);
-  //rect(loc.x, loc.y, 80, 15, 6);
   stroke(10);
   fill(200);  
   rect(loc.x, loc.y + 180, 100, 15, 6);
   noStroke();
   fill(45, 237, 88);
   rect(loc.x, loc.y + 181, health, 14, 6);
-  //stroke(10);
-  //fill(0);
-  //textSize(30);
-  //text(health, loc.x, loc.y + 220);
 }
 
 void draw()
 {
   background(200);
+  enemy1.display();
   healthBar(player);
- player.move();
- place.allMove(bullets);
+  player.move();
+  enemy1.move();
+  place.allMove(bullets);
+  place.applyDamage(bullets, player);
 }
   void keyPressed()
   {
