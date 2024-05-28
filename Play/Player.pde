@@ -1,6 +1,6 @@
 boolean wPressed, aPressed, sPressed, dPressed;
 public class Player extends Spaceship{
-  
+//boolean wPressed, aPressed, sPressed, dPressed;  
   
   public Player()
   {
@@ -32,5 +32,10 @@ public class Player extends Spaceship{
   public Bullet shoot()
   {
     return super.shoot();
+  }
+  
+  public PVector getPos()
+  {
+    return super.getPos();
   }
 }

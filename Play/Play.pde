@@ -8,33 +8,31 @@ Player player;
 void setup()
 {
 
-  size(1200, 1200); //can cahnge
+  size(1200, 1200);
+  bullets = new ArrayList<Bullet>();
+  place = new Bullet(new PVector(600, 100));
   //moving backgroud somewhere yeah
-  //player = new Spaceship();
   player = new Player();
 }
 
 void draw()
 {
   background(200);
-  //player.display();
- // image(imageS,0,0);
  player.move();
+ place.allMove(bullets);
 }
   void keyPressed()
   {
     if(key=='w')
       wPressed=true;
-   else if(key=='a')
+     else if(key=='a')
        aPressed=true;
-  else if(key=='s')
+    else if(key=='s')
       sPressed=true;
      else if(key=='d')
        dPressed=true;
-     if (key== 'q')
-  {
-    bullets.add(player.shoot());
-  }
+    if (key== 'q') bullets.add(player.shoot());
+  
   }
     
       void keyReleased(){
@@ -47,3 +45,4 @@ void draw()
      else if(key=='d')
        dPressed=false;
   }
+  
