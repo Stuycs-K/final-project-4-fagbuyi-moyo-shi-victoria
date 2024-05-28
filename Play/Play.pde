@@ -32,7 +32,7 @@ void draw()
      else if(key=='d')
        dPressed=true;
     if (key== 'q') bullets.add(player.shoot());
-  
+  //ad this to relase and maybe maybe a timer for spamming
   }
     
       void keyReleased(){
