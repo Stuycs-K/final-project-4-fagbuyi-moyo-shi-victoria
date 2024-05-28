@@ -1,12 +1,8 @@
-private int health;
-private int speed;
- private PImage imageS;
-private PVector position, velocity;
-
-
-public class Spaceship
-{
-  public Spaceship()
+boolean wPressed, aPressed, sPressed, dPressed;
+public class Player extends Spaceship{
+  
+  
+  public Player()
   {
     imageS=loadImage("file.png");
     health = 100; // assuming 100 is max health
@@ -16,13 +12,10 @@ public class Spaceship
      //image(imageS,position.x, position.y);
   }
   
-
-
   
-  
-  public void move()
+   public void move()
   {
-    /*if(aPressed==true)
+    if(aPressed==true)
       position.x-=10;
      if(dPressed==true)
       position.x+=10;
@@ -33,27 +26,6 @@ public class Spaceship
      // position.x+=velocity.x;
       //circle(position.x, position.y, 100);
            image(imageS,position.x, position.y);
-      */
+      
   }
-  
-  public void shoot()
-  {
-  }
-  
-  public void loseHealth()
-  {
-  }
-  
-  public PVector getPos() // only putting now so bullet can get postion of um spacehip
-  {
-    return position;
-  }
-  
-  void display()
-  {
-    color c = color(0, 0, 0);
-    fill(0);
-    //circle(position.x, position.y, 100);
-  }
-  
 }
