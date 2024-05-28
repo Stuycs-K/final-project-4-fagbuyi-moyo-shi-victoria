@@ -39,3 +39,7 @@ spaceship spawns bullets, but only one will move at a time. and speed keeps incr
 ### date 05/27
 
 merged with main. got multiple bullets to sapwn but they dont move.
+
+### date 05/28
+
+got multiple bullets to move at once, changed bullet orientation, made a health bar for player, started fixing bullet despawning
