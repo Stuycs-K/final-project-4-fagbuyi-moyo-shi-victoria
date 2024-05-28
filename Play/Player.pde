@@ -29,13 +29,19 @@ public class Player extends Spaceship{
       
   }
   
-  public Bullet shoot()
-  {
-    return super.shoot();
-  }
+  //public Bullet shoot()
+  //{
+  //  return super.shoot();
+  //}
   
-  public PVector getPos()
-  {
-    return super.getPos();
-  }
+  
+  //public int getHealth()
+  //{
+  //  return super.getHealth();
+  //}
+  
+  //public PVector getPos()
+  //{
+  //  return super.getPos();
+  //}
 }

@@ -1,3 +1,4 @@
+boolean shooting;
 
 public class Spaceship
 {
@@ -9,6 +10,7 @@ public class Spaceship
   {
     health = 100; // assuming 100 is max health
     position = new PVector(0 + 100, 0 + 100);
+    shooting = false;
   }
   
   public Spaceship(int x, int y)
@@ -37,8 +39,8 @@ public class Spaceship
    public Bullet shoot()
   {
     //only callled when q is pressed
-      Bullet bull = new Bullet(position);
-      return bull;
+    Bullet bull = new Bullet(position);
+    return bull;
   }
   
   public void loseHealth(int dam)
