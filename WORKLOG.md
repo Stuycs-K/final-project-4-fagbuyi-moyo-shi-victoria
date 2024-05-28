@@ -32,3 +32,7 @@ bullet detects spaceship and deals it damage. added another bullet construtor so
 ### date 05/26
 
 spaceship spawns bullets, but only one will move at a time. and speed keeps increasing with each bullet spawned. bullets should probably die on imapct too.
+
+### date 05/27
+
+merged with main. got multiple bullets to sapwn but they dont move.
