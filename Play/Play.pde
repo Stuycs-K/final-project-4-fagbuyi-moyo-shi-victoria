@@ -15,9 +15,29 @@ void setup()
   player = new Player();
 }
 
+void healthBar(Player player)
+{
+  PVector loc = player.getPos();
+  int health =  player.getHealth();
+  //health = health /100;
+  //fill(255);
+  //rect(loc.x, loc.y, 80, 15, 6);
+  stroke(10);
+  fill(200);  
+  rect(loc.x, loc.y + 180, 100, 15, 6);
+  noStroke();
+  fill(45, 237, 88);
+  rect(loc.x, loc.y + 181, health, 14, 6);
+  //stroke(10);
+  //fill(0);
+  //textSize(30);
+  //text(health, loc.x, loc.y + 220);
+}
+
 void draw()
 {
   background(200);
+  healthBar(player);
  player.move();
  place.allMove(bullets);
 }
@@ -32,7 +52,8 @@ void draw()
      else if(key=='d')
        dPressed=true;
     if (key== 'q') bullets.add(player.shoot());
-  
+    if (key == 'j') player.loseHealth(5);
+  //ad this to relase and maybe maybe a timer for spamming
   }
     
       void keyReleased(){
