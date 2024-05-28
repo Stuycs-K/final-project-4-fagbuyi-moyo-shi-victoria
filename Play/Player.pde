@@ -28,4 +28,9 @@ public class Player extends Spaceship{
            image(imageS,position.x, position.y);
       
   }
+  
+  public Bullet shoot()
+  {
+    return super.shoot();
+  }
 }

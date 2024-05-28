@@ -1,22 +1,28 @@
-Player player;
+Bullet place;
+ArrayList<Bullet> bullets;
+int countdown;
 ArrayList<Spaceship> enemies;
+PImage img;
+Player player;
+
 void setup()
 {
-  
+
   size(1200, 1200); //can cahnge
   //moving backgroud somewhere yeah
+  //player = new Spaceship();
   player = new Player();
 }
 
 void draw()
 {
   background(200);
-  player.display();
+  //player.display();
  // image(imageS,0,0);
  player.move();
 }
-
-  void keyPressed(){
+  void keyPressed()
+  {
     if(key=='w')
       wPressed=true;
    else if(key=='a')
@@ -25,6 +31,10 @@ void draw()
       sPressed=true;
      else if(key=='d')
        dPressed=true;
+     if (key== 'q')
+  {
+    bullets.add(player.shoot());
+  }
   }
     
       void keyReleased(){
