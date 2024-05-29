@@ -10,10 +10,13 @@ Worked on spaceship class and wasd movement using keyPressed and keyReleased. Tr
 got spaceship png to move with wasd. Gave up on velocity and just used pixels. Removed spaceship png background
 
 ### date 5/26
-created Enemy and Player subclasses, also E1, E2, E3 subclasses and transfered code from main spaceship classs to indivdual classes
+created Enemy and Player subclasses, also E1, E2, E3 subclasses and transfered code from main spaceship classs to indivdual classes, branched off to work on enemies
 
 ### date 5/27
 loaded in enemy spaceship, problem with nonstatic variables, not sure how to fix
+
+### date 5/28
+fixed problem with non static variables and enemy spawn, added enemy png and random movement for enemies
 
 ## GROUP MEMBER 2 (moyo)
 
