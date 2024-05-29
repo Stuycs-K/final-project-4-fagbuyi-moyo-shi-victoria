@@ -23,7 +23,7 @@ public class Bullet
     photo.resize(40, 40);
   }
   
-  public void move() //<>// //<>//
+  public void move() //<>// //<>// idk why this is here but ill leave it //<>//
   {
     pos.set(pos.x, pos.y - 5);
     image(photo, pos.x, pos.y, 40, 40);
