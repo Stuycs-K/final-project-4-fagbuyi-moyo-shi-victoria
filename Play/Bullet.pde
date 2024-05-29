@@ -31,21 +31,24 @@ public class Bullet
   
   public void allMove(ArrayList<Bullet> bulls)
   {
+    ArrayList<Bullet> live = new ArrayList<Bullet>();
     for (Bullet bull : bulls)
     {
-      if (bull.getStatus()) bull.move();
-      else
+      if (bull.getStatus()) 
       {
-        bullets.remove(bull);
+        bull.move();
+        live.add(bull);
       }
     }
+    bulls = live;
+    
   }
   
   public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
   {
     for (Bullet bull : bulls)
     {
-      if (PVector.dist(tar.getPos(), bull.pos) <= 20)
+      if (PVector.dist(tar.getPos(), bull.pos) <= 40) // num will cahnge based on eenmy png
      {
        tar.loseHealth(damage);
        bull.setStatus(false);
