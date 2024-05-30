@@ -1,9 +1,16 @@
+
+
+E1 enemy1;
+
+
 Bullet place;
 ArrayList<Bullet> bullets;
 int countdown;
+
 ArrayList<Spaceship> enemies;
 PImage img;
 Player player;
+
 
 void setup()
 {
@@ -13,6 +20,7 @@ void setup()
   place = new Bullet(new PVector(600, 100));
   //moving backgroud somewhere yeah
   player = new Player();
+  enemy1 =new E1();
 }
 
 void healthBar(Player player)
@@ -36,10 +44,24 @@ void healthBar(Player player)
 
 void draw()
 {
+
   background(200);
+
+  enemy1.direction();
+   enemy1.display();
+ player.display();
+
+ // image(imageS,0,0);
+ player.move();
+ enemy1.move();
+
+
+//d enemy1.display();
+
   healthBar(player);
  player.move();
  place.allMove(bullets);
+
 }
   void keyPressed()
   {
