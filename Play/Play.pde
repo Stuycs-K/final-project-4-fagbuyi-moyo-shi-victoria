@@ -1,8 +1,3 @@
-
-
-E1 enemy1;
-
-
 Bullet place;
 ArrayList<Bullet> bullets;
 E1 enemy1;
@@ -58,8 +53,7 @@ void draw()
 {
 
   background(200);
-<<<<<<< HEAD
-  bk();
+  //bk();
   countdown--;
   if (countdown == 0) countdown = 600;
   enemy1.display();
