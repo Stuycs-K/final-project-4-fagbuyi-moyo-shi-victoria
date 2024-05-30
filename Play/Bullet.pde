@@ -23,9 +23,15 @@ public class Bullet
     photo.resize(40, 40);
   }
   
-  public void move() //<>// //<>// idk why this is here but ill leave it //<>//
+  public void move() //<>// //<>// idk why this is here but ill leave it //<>// //<>//
   {
     pos.set(pos.x, pos.y - 5);
+    image(photo, pos.x, pos.y, 40, 40);
+  }
+  
+    public void moveEnemy1()
+  {
+    pos.set(pos.x, pos.y + 5);
     image(photo, pos.x, pos.y, 40, 40);
   }
   
@@ -44,7 +50,17 @@ public class Bullet
     
   }
   
-  public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
+<<<<<<< HEAD
+    public void allMove1(ArrayList<Bullet> bulls)
+  {
+    for (Bullet bull : bulls)
+    {
+      bull.moveEnemy1();
+    }
+  }
+  
+
+  public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
   {
     for (Bullet bull : bulls)
     {
