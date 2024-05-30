@@ -1,4 +1,5 @@
-
+int time=millis();
+  int temp=1;
 public class E1 extends Enemy{
 
   
@@ -9,15 +10,37 @@ public class E1 extends Enemy{
     health = 100; // assuming 100 is max health
     position = new PVector(0 + 300, 0 + 100);
     velocity=new PVector(0,0);
-   // circle(position.x, position.y, 100);
+
      
   }
+  
+  void direction(){
+     if(position.x<=0){
+    temp=1;
+    time = millis();}
+    else if(position.x>=width-100){
+    temp=0;
+        time = millis();}
+    else if(position.y<=0){
+    temp=3;
+        time = millis();}
+    else if(position.y>=height/2){
+    temp=2;
+    time = millis();}
+  else if (millis() > time + 1000)
+  {
+    temp=int(random(0,4));
+    time = millis();
+  }
+
+}
+
   
   void display(){
     image(imageS,position.x, position.y);}
     
-    void move(int temp){
-      //every 2 seconds call move
+    void move(){
+
       int moving=0;
       //int temp=1;
       // if(frameCount % 20 ==0)
@@ -34,6 +57,7 @@ public class E1 extends Enemy{
         if(temp==3)
         position.y+=5;
      image(imageS,position.x, position.y);
+
    
      // }}
                  

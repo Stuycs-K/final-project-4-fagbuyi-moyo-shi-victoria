@@ -1,8 +1,8 @@
 Player player;
 E1 enemy1;
-int time=millis();
+
 ArrayList<Spaceship> enemies;
-  int temp=1;
+
 
 void setup()
 {
@@ -12,24 +12,18 @@ void setup()
   player = new Player();
   enemy1 =new E1();
 }
-void direction(){
-  if (millis() > time + 500)
-  {
-    temp=int(random(0,4));
-    time = millis();
-  }
-}
+
 void draw()
 {
 
   background(200);
-  direction();
+  enemy1.direction();
    enemy1.display();
  player.display();
 
  // image(imageS,0,0);
  player.move();
- enemy1.move(temp);
+ enemy1.move();
 
 
 //d enemy1.display();
