@@ -48,3 +48,7 @@ merged with main. got multiple bullets to sapwn but they dont move.
 ### date 05/28
 
 got multiple bullets to move at once, changed bullet orientation, made a health bar for player, started fixing bullet despawning
+
+### date 05/29
+
+bullets fully disaapear and deal damage to enemy, started moving background
