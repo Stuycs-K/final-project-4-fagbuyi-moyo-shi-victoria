@@ -21,8 +21,8 @@ void setup()
 void bk()
 {
   // so live make the stars jiggle, so like dont use random
-  if (countdown == 600)
-  {
+  //if (countdown == 600)
+  //{
     background(200);
      fill(198, 22, 247);
     stroke(15);
@@ -32,7 +32,7 @@ void bk()
     {
       int size = (int) random(80);
       rect(random(0, width - 50), random(0, height- 50), size, size / 3);
-    }
+    //}
   }
   //random(12);
 }
