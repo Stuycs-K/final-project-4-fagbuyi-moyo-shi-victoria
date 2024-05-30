@@ -23,32 +23,65 @@ public class Bullet
     photo.resize(40, 40);
   }
   
-  public void move() //<>//
+  public void move() //<>// //<>// idk why this is here but ill leave it //<>//
   {
     pos.set(pos.x, pos.y - 5);
     image(photo, pos.x, pos.y, 40, 40);
   }
   
+    public void moveEnemy1()
+  {
+    pos.set(pos.x, pos.y + 5);
+    image(photo, pos.x, pos.y, 40, 40);
+  }
+  
   public void allMove(ArrayList<Bullet> bulls)
+  {
+    ArrayList<Bullet> live = new ArrayList<Bullet>();
+    for (Bullet bull : bulls)
+    {
+      if (bull.getStatus()) 
+      {
+        bull.move();
+        live.add(bull);
+      }
+    }
+    bulls = live;
+    
+  }
+  
+<<<<<<< HEAD
+    public void allMove1(ArrayList<Bullet> bulls)
   {
     for (Bullet bull : bulls)
     {
-      bull.move();
+      bull.moveEnemy1();
     }
   }
   
   public void applyDamage(Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
+=======
+  public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
+>>>>>>> 868ac84adb8fd83e99285965f0e9fe037dd2a540
   {
-   if (PVector.dist(tar.getPos(), pos) <= 20)
-   {
-     tar.loseHealth(damage);
-     alive = false;
-   }
+    for (Bullet bull : bulls)
+    {
+      if (PVector.dist(tar.getPos(), bull.pos) <= 40) // num will cahnge based on eenmy png
+     {
+       tar.loseHealth(damage);
+       bull.setStatus(false);
+     }
+    }
   }
   
   public boolean getStatus() //also might be unneeded
   {
     return alive;
+  }
+  
+  public void setStatus(boolean stat)
+  {
+    alive = stat;
   }
   
   //public PVector getPos() //might be unneeded

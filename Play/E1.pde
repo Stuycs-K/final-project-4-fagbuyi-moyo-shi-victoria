@@ -1,8 +1,11 @@
 int time=millis();
-  int temp=1;
-public class E1 extends Enemy{
+int time2=millis();
 
-  
+
+public class E1 extends Enemy{
+  ArrayList<Bullet> bullets=new ArrayList<Bullet>();
+    int temp=1;
+      Bullet place = new Bullet(new PVector(600, 100));
   public E1()
     {
       super();
@@ -30,7 +33,13 @@ public class E1 extends Enemy{
   else if (millis() > time + 1000)
   {
     temp=int(random(0,4));
+           //bullets.add(new Bullet(new PVector(position.x,position.y+200)));
     time = millis();
+  }
+    else if (millis() > time2 + 500)
+  {
+           bullets.add(new Bullet(new PVector(position.x,position.y+200)));
+    time2 = millis();
   }
 
 }
@@ -58,7 +67,8 @@ public class E1 extends Enemy{
         position.y+=5;
      image(imageS,position.x, position.y);
 
-   
+
+   place.allMove1(bullets);
      // }}
                  
     }
