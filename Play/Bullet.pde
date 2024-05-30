@@ -29,11 +29,25 @@ public class Bullet
     image(photo, pos.x, pos.y, 40, 40);
   }
   
+    public void moveEnemy1()
+  {
+    pos.set(pos.x, pos.y + 5);
+    image(photo, pos.x, pos.y, 40, 40);
+  }
+  
   public void allMove(ArrayList<Bullet> bulls)
   {
     for (Bullet bull : bulls)
     {
       bull.move();
+    }
+  }
+  
+    public void allMove1(ArrayList<Bullet> bulls)
+  {
+    for (Bullet bull : bulls)
+    {
+      bull.moveEnemy1();
     }
   }
   
