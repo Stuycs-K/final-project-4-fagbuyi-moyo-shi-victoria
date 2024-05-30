@@ -1,7 +1,7 @@
 
 boolean wPressed, aPressed, sPressed, dPressed;
 public class Player extends Spaceship{
-  
+//boolean wPressed, aPressed, sPressed, dPressed;  
   
   public Player()
   {
@@ -29,6 +29,7 @@ public class Player extends Spaceship{
            image(imageS,position.x, position.y);
       
   }
+
     void display()
   {
     //color c = color(0, 0, 0);
@@ -36,4 +37,22 @@ public class Player extends Spaceship{
     //circle(position.x, position.y, 100);
    // image(imageS,position.x, position.y);
   }
+
+  
+  //public Bullet shoot()
+  //{
+  //  return super.shoot();
+  //}
+  
+  
+  //public int getHealth()
+  //{
+  //  return super.getHealth();
+  //}
+  
+  //public PVector getPos()
+  //{
+  //  return super.getPos();
+  //}
+
 }

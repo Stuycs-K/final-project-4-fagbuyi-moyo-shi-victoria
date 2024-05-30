@@ -9,9 +9,17 @@ Worked on spaceship class and wasd movement using keyPressed and keyReleased. Tr
 ### date 5/24
 got spaceship png to move with wasd. Gave up on velocity and just used pixels. Removed spaceship png background
 
-info
+### date 5/26
+created Enemy and Player subclasses, also E1, E2, E3 subclasses and transfered code from main spaceship classs to indivdual classes, branched off to work on enemies
 
+### date 5/27
+loaded in enemy spaceship, problem with nonstatic variables, not sure how to fix
 
+### date 5/28
+fixed problem with non static variables and enemy spawn, added enemy png and random movement for enemies, stuck on timing
+
+### date 5/28
+fixed timing issue for movement, random movement in enemies now stays within borders, working on multiple enemies
 ## GROUP MEMBER 2 (moyo)
 
 ### date 05/22
@@ -32,3 +40,11 @@ bullet detects spaceship and deals it damage. added another bullet construtor so
 ### date 05/26
 
 spaceship spawns bullets, but only one will move at a time. and speed keeps increasing with each bullet spawned. bullets should probably die on imapct too.
+
+### date 05/27
+
+merged with main. got multiple bullets to sapwn but they dont move.
+
+### date 05/28
+
+got multiple bullets to move at once, changed bullet orientation, made a health bar for player, started fixing bullet despawning
