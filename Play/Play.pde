@@ -1,3 +1,8 @@
+
+
+E1 enemy1;
+
+
 Bullet place;
 ArrayList<Bullet> bullets;
 E1 enemy1;
@@ -51,7 +56,9 @@ void healthBar(Player player)
 
 void draw()
 {
+
   background(200);
+<<<<<<< HEAD
   bk();
   countdown--;
   if (countdown == 0) countdown = 600;
@@ -61,6 +68,10 @@ void draw()
   enemy1.move();
   place.allMove(bullets);
   place.applyDamage(bullets, enemy1);
+  enemy1.direction();
+ player.display();
+ // image(imageS,0,0);
+//d enemy1.display();
 }
   void keyPressed()
   {

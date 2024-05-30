@@ -1,3 +1,4 @@
+
 boolean wPressed, aPressed, sPressed, dPressed;
 public class Player extends Spaceship{
 //boolean wPressed, aPressed, sPressed, dPressed;  
@@ -6,10 +7,10 @@ public class Player extends Spaceship{
   {
     imageS=loadImage("file.png");
     health = 100; // assuming 100 is max health
-    position = new PVector(0 + 100, 0 + 100);
+    position = new PVector(0 + 100, 0 + 600);
     velocity=new PVector(0,0);
-    circle(position.x, position.y, 100);
-     //image(imageS,position.x, position.y);
+    //circle(position.x, position.y, 100);
+     
   }
   
   
@@ -28,6 +29,15 @@ public class Player extends Spaceship{
            image(imageS,position.x, position.y);
       
   }
+
+    void display()
+  {
+    //color c = color(0, 0, 0);
+   // fill(0);
+    //circle(position.x, position.y, 100);
+   // image(imageS,position.x, position.y);
+  }
+
   
   //public Bullet shoot()
   //{
@@ -44,4 +54,5 @@ public class Player extends Spaceship{
   //{
   //  return super.getPos();
   //}
+
 }

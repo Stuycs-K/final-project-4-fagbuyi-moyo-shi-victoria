@@ -10,11 +10,16 @@ Worked on spaceship class and wasd movement using keyPressed and keyReleased. Tr
 got spaceship png to move with wasd. Gave up on velocity and just used pixels. Removed spaceship png background
 
 ### date 5/26
-created Enemy and Player subclasses, also E1, E2, E3 subclasses and transfered code from main spaceship classs to indivdual classes
+created Enemy and Player subclasses, also E1, E2, E3 subclasses and transfered code from main spaceship classs to indivdual classes, branched off to work on enemies
 
 ### date 5/27
 loaded in enemy spaceship, problem with nonstatic variables, not sure how to fix
 
+### date 5/28
+fixed problem with non static variables and enemy spawn, added enemy png and random movement for enemies, stuck on timing
+
+### date 5/28
+fixed timing issue for movement, random movement in enemies now stays within borders, working on multiple enemies
 ## GROUP MEMBER 2 (moyo)
 
 ### date 05/22
@@ -43,3 +48,7 @@ merged with main. got multiple bullets to sapwn but they dont move.
 ### date 05/28
 
 got multiple bullets to move at once, changed bullet orientation, made a health bar for player, started fixing bullet despawning
+
+### date 05/29
+
+bullets fully disaapear and deal damage to enemy, started moving background
