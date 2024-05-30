@@ -48,7 +48,8 @@ public class Bullet
   {
     for (Bullet bull : bulls)
     {
-     if (abs(tar.getPos().x - bull.pos.x) <= 200 && abs(tar.getPos().y -  bull.pos.y) <= 252) // will have to change based on um enenmy size
+      int[] dims =  tar.getDims();
+     if (abs(tar.getPos().x - bull.pos.x) <= dims[0] && abs(tar.getPos().y -  bull.pos.y) <= dims[1]) // will have to change based on um enenmy size
       {
        tar.loseHealth(damage);
        bull.setStatus(false);

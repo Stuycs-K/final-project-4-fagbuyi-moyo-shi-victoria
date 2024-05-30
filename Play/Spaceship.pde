@@ -56,7 +56,7 @@ public class Spaceship
     return bull;
   }
   
-  public void loseHealth(int dam)
+  public void loseHealth(int dam) //fix
   {
     health -= dam;
     if (health < 0)
@@ -70,11 +70,16 @@ public class Spaceship
     return health;
   }
   
-  public PVector getPos() // only putting now so bullet can get postion of um spacehip
+  public PVector getPos()
   {
     return position;
   }
   
+  public int[] getDims()
+  {
+    int[] pop = new int[]{imageS.width, imageS.height};
+    return pop;
+  }
   
   void display()
   {
