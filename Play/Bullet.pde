@@ -44,15 +44,15 @@ public class Bullet
     
   }
   
-  public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
+  public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
   {
     for (Bullet bull : bulls)
     {
-      if (PVector.dist(tar.getPos(), bull.pos) <= 40) // num will cahnge based on eenmy png
-     {
+     if (abs(tar.getPos().x - bull.pos.x) <= 200 && abs(tar.getPos().y -  bull.pos.y) <= 252) // will have to change based on um enenmy size
+      {
        tar.loseHealth(damage);
        bull.setStatus(false);
-     }
+      }
     }
   }
   

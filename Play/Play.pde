@@ -37,7 +37,7 @@ void bk()
   //random(12);
 }
 
-void healthBar(Player player)
+void healthBar(Player player) //move to spaceship
 {
   PVector loc = player.getPos();
   int health =  player.getHealth();
