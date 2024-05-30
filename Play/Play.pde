@@ -78,6 +78,7 @@ void draw()
      else if(key=='d')
        dPressed=true;
     if (key== 'q') bullets.add(player.shoot());
+    //if (key == 'j') player.loseHealth(5);
   //ad this to relase and maybe maybe a timer for spamming
   }
     
