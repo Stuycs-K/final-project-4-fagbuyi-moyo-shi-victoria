@@ -16,8 +16,10 @@ created Enemy and Player subclasses, also E1, E2, E3 subclasses and transfered c
 loaded in enemy spaceship, problem with nonstatic variables, not sure how to fix
 
 ### date 5/28
-fixed problem with non static variables and enemy spawn, added enemy png and random movement for enemies
+fixed problem with non static variables and enemy spawn, added enemy png and random movement for enemies, stuck on timing
 
+### date 5/28
+fixed timing issue for movement, random movement in enemies now stays within borders, working on multiple enemies
 ## GROUP MEMBER 2 (moyo)
 
 ### date 05/22
