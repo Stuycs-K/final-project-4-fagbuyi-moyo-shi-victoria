@@ -27,6 +27,8 @@ got enemies to shoot back on a timer, fixed bullet spawn rate
 ### date 5/30
 worked on spawning multiple enemies,created enemy arraylist to keep track and edited draw to make it apply to all enemies, made enemies not overlap as much with borders
 
+background, bullet png,enemy png, player borde, bullets
+
 ## GROUP MEMBER 2 (moyo)
 
 ### date 05/22
