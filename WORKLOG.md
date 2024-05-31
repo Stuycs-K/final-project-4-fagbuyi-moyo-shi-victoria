@@ -52,3 +52,6 @@ got multiple bullets to move at once, changed bullet orientation, made a health 
 ### date 05/29
 
 bullets fully disaapear and deal damage to enemy, started moving background
+
+### date 05/30
+merged, fixed bullet dectection range, made it so bullets actully stop dealing damage after despawing, add bullets arraylist as spaceship class variable
