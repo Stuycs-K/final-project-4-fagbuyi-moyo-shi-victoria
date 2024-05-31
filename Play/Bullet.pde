@@ -35,7 +35,7 @@ public class Bullet
     image(photo, pos.x, pos.y, 40, 40);
   }
   
-  public void allMove(ArrayList<Bullet> bulls)
+  public ArrayList<Bullet> allMove(ArrayList<Bullet> bulls)
   {
     ArrayList<Bullet> live = new ArrayList<Bullet>();
     for (Bullet bull : bulls)
@@ -46,8 +46,7 @@ public class Bullet
         live.add(bull);
       }
     }
-    bulls = live;
-    
+    return live;
   }
   
     public ArrayList<Bullet> allMove1(ArrayList<Bullet> bulls)
@@ -93,4 +92,9 @@ public class Bullet
   //{
   //  return pos;
   //}
+  
+   //public void setAmmo(ArrayList<Bullet> pop)
+   // {
+   //   bullets = pop;
+   // }
 }

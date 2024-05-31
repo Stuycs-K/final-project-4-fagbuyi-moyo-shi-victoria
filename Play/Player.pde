@@ -10,6 +10,7 @@ public class Player extends Spaceship{
     position = new PVector(0 + 100, 0 + 600);
     velocity=new PVector(0,0);
     //circle(position.x, position.y, 100);
+    bullets = new ArrayList<Bullet>();
      
   }
   

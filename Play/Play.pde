@@ -1,5 +1,5 @@
 Bullet place;
-ArrayList<Bullet> bullets;
+//ArrayList<Bullet> bullets;
 E1 enemy1;
 ArrayList<Spaceship> enemies;
 Player player;
@@ -10,7 +10,7 @@ void setup()
 {
 
   size(1200, 1200);
-  bullets = new ArrayList<Bullet>();
+  //bullets = new ArrayList<Bullet>();
   place = new Bullet(new PVector(600, 100));
   //moving backgroud somewhere yeah
   player = new Player();
@@ -60,8 +60,8 @@ void draw()
   healthBar(player);
   player.move();
   enemy1.move();
-  place.allMove(bullets);
-  place.applyDamage(bullets, enemy1);
+  place.allMove(player.getAmmo());
+  place.applyDamage(player.getAmmo(), enemy1);
   place.applyDamage(enemy1.getAmmo(), player);
   enemy1.direction();
  player.display();
@@ -78,7 +78,7 @@ void draw()
       sPressed=true;
      else if(key=='d')
        dPressed=true;
-    if (key== 'q') bullets.add(player.shoot());
+    if (key== 'q') player.shoot();
     //if (key == 'j') player.loseHealth(5);
   //ad this to relase and maybe maybe a timer for spamming
   }
