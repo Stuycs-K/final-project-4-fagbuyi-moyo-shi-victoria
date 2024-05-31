@@ -50,7 +50,7 @@ public class Bullet
     
   }
   
-<<<<<<< HEAD
+
     public void allMove1(ArrayList<Bullet> bulls)
   {
     for (Bullet bull : bulls)
@@ -59,10 +59,9 @@ public class Bullet
     }
   }
   
-  public void applyDamage(Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
-=======
+
   public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
->>>>>>> 868ac84adb8fd83e99285965f0e9fe037dd2a540
+
   {
     for (Bullet bull : bulls)
     {

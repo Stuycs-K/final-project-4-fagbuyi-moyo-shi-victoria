@@ -1,10 +1,12 @@
-int time=millis();
-int time2=millis();
+
 
 
 public class E1 extends Enemy{
   ArrayList<Bullet> bullets=new ArrayList<Bullet>();
-    int temp=1;
+    int temp=int(random(0,4));
+    int time=millis();
+int time2=millis();
+int xSpawn, ySpawn;
       Bullet place = new Bullet(new PVector(600, 100));
   public E1()
     {
@@ -12,22 +14,36 @@ public class E1 extends Enemy{
    imageS=loadImage("image.png");
     health = 100; // assuming 100 is max health
     position = new PVector(0 + 300, 0 + 100);
-    velocity=new PVector(0,0);
+    xSpawn=300;
+    ySpawn=100;
+
+     
+  }
+    public E1(int x,int y)
+    {
+      super();
+   imageS=loadImage("image.png");
+    health = 100; // assuming 100 is max health
+    position = new PVector(x,y);
+
+        xSpawn=x;
+    ySpawn=y;
 
      
   }
   
+  
   void direction(){
-     if(position.x<=0){
+     if(position.x<=0||position.x<xSpawn-200){
     temp=1;
     time = millis();}
-    else if(position.x>=width-100){
+    else if(position.x>=width-100||position.x>xSpawn+200){
     temp=0;
         time = millis();}
     else if(position.y<=0){
     temp=3;
         time = millis();}
-    else if(position.y>=height/2){
+    else if(position.y>=height/4){
     temp=2;
     time = millis();}
   else if (millis() > time + 1000)
@@ -48,6 +64,8 @@ public class E1 extends Enemy{
   void display(){
     image(imageS,position.x, position.y);}
     
+    
+    
     void move(){
 
       int moving=0;
@@ -58,13 +76,13 @@ public class E1 extends Enemy{
      //   while(frameCount<frameCount+120){
          //for(int i=0;i<200;i++){
         if(temp==0)
-        position.x-=5;
+        position.x-=2;
          if(temp==1)
-        position.x+=5;
+        position.x+=2;
       if(temp==2)
-        position.y-=5;
+        position.y-=2;
         if(temp==3)
-        position.y+=5;
+        position.y+=2;
      image(imageS,position.x, position.y);
 
 

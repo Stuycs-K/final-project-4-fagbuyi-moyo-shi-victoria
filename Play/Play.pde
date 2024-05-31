@@ -1,7 +1,9 @@
 Bullet place;
 ArrayList<Bullet> bullets;
 E1 enemy1;
-ArrayList<Spaceship> enemies;
+E1 enemy2;
+E1 enemy3;
+ArrayList<Enemy> enemies=new ArrayList<Enemy>();
 Player player;
 int countdown;
 
@@ -9,12 +11,16 @@ int countdown;
 void setup()
 {
 
-  size(1200, 1200);
+  size(950, 1000);
   bullets = new ArrayList<Bullet>();
   place = new Bullet(new PVector(600, 100));
   //moving backgroud somewhere yeah
   player = new Player();
-  enemy1 = new E1();
+ enemy1 = new E1();
+   enemies.add( new E1(100,100));
+   enemies.add(new E1(400,100));
+   enemies.add(new E1(700,100));
+  
   countdown = 600;
 }
 
@@ -56,14 +62,17 @@ void draw()
   //bk();
   countdown--;
   if (countdown == 0) countdown = 600;
-  enemy1.display();
   healthBar(player);
   player.move();
-  enemy1.move();
   place.allMove(bullets);
-  place.applyDamage(bullets, enemy1);
-  enemy1.direction();
  player.display();
+ 
+    for (Enemy en : enemies){
+           en.direction();
+ en.move();
+   en.display();
+      place.applyDamage(bullets, en);
+}
  // image(imageS,0,0);
 //d enemy1.display();
 }

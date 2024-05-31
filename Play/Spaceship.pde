@@ -8,7 +8,7 @@ public class Spaceship
 
  int speed;
   PImage imageS;
- PVector position, velocity;
+ PVector position;
   public Spaceship()
   {
     /*
