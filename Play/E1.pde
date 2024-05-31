@@ -75,14 +75,5 @@ public class E1 extends Enemy
                  
     }
     
-    //public ArrayList<Bullet> getAmmo()
-    //{
-    //  return bullets;
-    //}
-    
-    //public void setAmmo(ArrayList<Bullet> pop)
-    //{
-    //  bullets = pop;
-    //}
   
 }

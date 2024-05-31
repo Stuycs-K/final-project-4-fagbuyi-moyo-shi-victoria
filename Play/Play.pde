@@ -54,8 +54,8 @@ void draw()
 
   background(200);
   //bk();
-  countdown--;
-  if (countdown == 0) countdown = 600;
+  //countdown--;
+  //if (countdown == 0) countdown = 600;
   enemy1.display();
   healthBar(player);
   player.move();
@@ -64,10 +64,11 @@ void draw()
   place.applyDamage(player.getAmmo(), enemy1);
   place.applyDamage(enemy1.getAmmo(), player);
   enemy1.direction();
- player.display();
+  player.display();
  // image(imageS,0,0);
 //d enemy1.display();
 }
+ 
   void keyPressed()
   {
     if(key=='w')
