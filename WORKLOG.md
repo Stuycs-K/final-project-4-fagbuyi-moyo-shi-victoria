@@ -20,6 +20,13 @@ fixed problem with non static variables and enemy spawn, added enemy png and ran
 
 ### date 5/28
 fixed timing issue for movement, random movement in enemies now stays within borders, working on multiple enemies
+
+### date 5/29
+got enemies to shoot back on a timer, fixed bullet spawn rate
+
+### date 5/30
+worked on spawning multiple enemies,created enemy arraylist to keep track and edited draw to make it apply to all enemies, made enemies not overlap as much with borders
+
 ## GROUP MEMBER 2 (moyo)
 
 ### date 05/22
