@@ -62,6 +62,7 @@ void draw()
   enemy1.move();
   place.allMove(bullets);
   place.applyDamage(bullets, enemy1);
+  place.applyDamage(enemy1.getAmmo(), player);
   enemy1.direction();
  player.display();
  // image(imageS,0,0);

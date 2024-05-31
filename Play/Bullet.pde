@@ -50,13 +50,19 @@ public class Bullet
     
   }
   
-<<<<<<< HEAD
-    public void allMove1(ArrayList<Bullet> bulls)
+    public ArrayList<Bullet> allMove1(ArrayList<Bullet> bulls)
   {
+    ArrayList<Bullet> live = new ArrayList<Bullet>();
     for (Bullet bull : bulls)
     {
-      bull.moveEnemy1();
+      if (bull.getStatus()) 
+      {
+        bull.moveEnemy1();
+        live.add(bull);
+      }
     }
+    //this.setAmmo(live);
+    return live;
   }
   
 
@@ -65,10 +71,10 @@ public class Bullet
     for (Bullet bull : bulls)
     {
       int[] dims =  tar.getDims();
-     if (abs(tar.getPos().x - bull.pos.x) <= dims[0] && abs(tar.getPos().y -  bull.pos.y) <= dims[1]) // will have to change based on um enenmy size
+     if (abs(tar.getPos().x - bull.pos.x) <= dims[0] && abs(tar.getPos().y -  bull.pos.y) <= dims[1])
       {
-       tar.loseHealth(damage);
        bull.setStatus(false);
+       tar.loseHealth(damage);
       }
     }
   }

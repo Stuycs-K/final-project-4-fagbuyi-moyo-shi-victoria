@@ -2,22 +2,23 @@ int time=millis();
 int time2=millis();
 
 
-public class E1 extends Enemy{
+public class E1 extends Enemy
+{
   ArrayList<Bullet> bullets=new ArrayList<Bullet>();
-    int temp=1;
-      Bullet place = new Bullet(new PVector(600, 100));
+  int temp=1;
+  Bullet place = new Bullet(new PVector(600, 100));
+  
   public E1()
     {
       super();
-   imageS=loadImage("image.png");
-    health = 100; // assuming 100 is max health
-    position = new PVector(0 + 300, 0 + 100);
-    velocity=new PVector(0,0);
-
-     
+      imageS=loadImage("image.png");
+      health = 10; // assuming 100 is max health
+      position = new PVector(0 + 300, 0 + 100);
+      velocity=new PVector(0,0);
   }
   
-  void direction(){
+  void direction()
+  {
      if(position.x<=0){
     temp=1;
     time = millis();}
@@ -68,9 +69,19 @@ public class E1 extends Enemy{
      image(imageS,position.x, position.y);
 
 
-   place.allMove1(bullets);
+   bullets = place.allMove1(bullets);
      // }}
                  
+    }
+    
+    public ArrayList<Bullet> getAmmo()
+    {
+      return bullets;
+    }
+    
+    public void setAmmo(ArrayList<Bullet> pop)
+    {
+      bullets = pop;
     }
   
 }
