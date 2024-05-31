@@ -10,6 +10,7 @@ public class Spaceship
   PImage imageS;
  PVector position, velocity;
  ArrayList<Bullet> bullets;
+ int[] Hitbox;
   public Spaceship()
   {
     /*
@@ -25,6 +26,7 @@ public class Spaceship
     position = new PVector(0 + 100, 0 + 100);
     shooting = false;
     bullets = new ArrayList<Bullet>();
+    Hitbox = new int[2];
 
   }
   
@@ -87,6 +89,16 @@ public class Spaceship
   {
     return bullets;
   }
+  
+  public int[] getHitbox()
+  {
+    return Hitbox;
+  }
+  
+  //public void showHb()
+  //{
+  //  rect(position.x + imageS, position.y, Hitbox[0], Hitbox[1]);
+  //}
   
   void display()
   {
