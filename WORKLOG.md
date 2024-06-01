@@ -25,9 +25,13 @@ fixed timing issue for movement, random movement in enemies now stays within bor
 got enemies to shoot back on a timer, fixed bullet spawn rate
 
 ### date 5/30
-worked on spawning multiple enemies,created enemy arraylist to keep track and edited draw to make it apply to all enemies, made enemies not overlap as much with borders
+worked on spawning multiple enemies,created enemy arraylist to keep track and edited draw to make it apply to all enemies
 
-background, bullet png,enemy png, player borde, bullets
+### date 5/31
+made enemies not overlap as much with borders, make them stay in top half of screen, worked on changing png for bullets
+
+### date 6/1
+finished changing bullet pngs for enemy and player, removed background from enemy, made player unable to go out of bounds, fixed player shooting issue (can shoot while moving now and no more spamming)
 
 ## GROUP MEMBER 2 (moyo)
 
