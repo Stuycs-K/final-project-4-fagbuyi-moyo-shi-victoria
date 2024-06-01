@@ -8,7 +8,7 @@ public class Spaceship
 
  int speed;
   PImage imageS;
- PVector position, velocity;
+ PVector position;
   public Spaceship()
   {
     /*
@@ -52,7 +52,7 @@ public class Spaceship
    public Bullet shoot()
   {
     //only callled when q is pressed
-    Bullet bull = new Bullet(position);
+    Bullet bull = new Bullet(1,position);
     return bull;
   }
   
