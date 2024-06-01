@@ -86,7 +86,8 @@ void draw()
       sPressed=true;
      else if(key=='d')
        dPressed=true;
-    if (key== ' ') bullets.add(player.shoot());
+    if (key== ' ')
+    spacePressed=true;
   //ad this to relase and maybe maybe a timer for spamming
   }
     
@@ -99,5 +100,7 @@ void draw()
       sPressed=false;
      else if(key=='d')
        dPressed=false;
+      if (key== ' ')
+    spacePressed=false;
   }
   
