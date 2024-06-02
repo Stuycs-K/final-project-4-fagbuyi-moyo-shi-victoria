@@ -67,17 +67,14 @@ void draw()
   if (countdown == 0) countdown = 600;
   healthBar(player);
   player.move();
-  place.allMove(player.getAmmo());
-  //place.allMove(bullets);
- //player.display();
- //place.applyDamage(bullets, enemy1);
+  place.allMove(bullets);
+  player.display();
  
     for (Enemy en : enemies){
-      place.applyDamage(bullets, en);
            en.direction();
  en.move();
    en.display();
-      place.applyDamage1(en.getAmmo(), player);
+      place.applyDamage(bullets, en);
 }
  // image(imageS,0,0);
 //d enemy1.display();
@@ -94,8 +91,7 @@ void draw()
      else if(key=='d')
        dPressed=true;
     if (key== ' ')
-    spacePressed=true; 
-    //bullets.add(player.shoot());
+    spacePressed=true;
   //ad this to relase and maybe maybe a timer for spamming
   }
     

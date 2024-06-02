@@ -23,7 +23,7 @@ public class Bullet
     photo = loadImage("bullet.png");
     photo.resize(40, 40);
   }
-   //<>//
+   //<>// //<>//
   public Bullet(PVector spawnPoint, int dam)
   {
     damage = dam;
@@ -75,6 +75,19 @@ public class Bullet
   
 
   public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
+  {
+    for (Bullet bull : bulls)
+    {
+      int[] dims =  tar.getDims();
+     if (abs(tar.getPos().x - bull.pos.x) <= dims[0] && abs(tar.getPos().y -  bull.pos.y) <= dims[1]) // will have to change based on um enenmy size
+      {
+       tar.loseHealth(damage);
+       bull.setStatus(false);
+      }
+    }
+  }
+
+  public void applyDamage1(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
   {
     for (Bullet bull : bulls)
     {
