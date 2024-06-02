@@ -1,11 +1,12 @@
 Bullet place;
-ArrayList<Bullet> bullets;
+//ArrayList<Bullet> bullets;
 E1 enemy1;
 E1 enemy2;
 E1 enemy3;
 ArrayList<Enemy> enemies=new ArrayList<Enemy>();
 Player player;
 int countdown;
+ArrayList<Bullet> bullets;
 
 //we should have a game class so draw and setup and less chunky
 void setup()
@@ -43,7 +44,7 @@ void bk()
   //random(12);
 }
 
-void healthBar(Player player)
+void healthBar(Player player) //move to spaceship
 {
   PVector loc = player.getPos();
   int health =  player.getHealth();
@@ -60,6 +61,8 @@ void draw()
 
   background(200);
   //bk();
+
+  player.showHb();
   countdown--;
   if (countdown == 0) countdown = 600;
   healthBar(player);
@@ -76,6 +79,7 @@ void draw()
  // image(imageS,0,0);
 //d enemy1.display();
 }
+ 
   void keyPressed()
   {
     if(key=='w')

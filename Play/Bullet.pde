@@ -23,7 +23,7 @@ public class Bullet
     photo = loadImage("bullet.png");
     photo.resize(40, 40);
   }
-  
+   //<>//
   public Bullet(PVector spawnPoint, int dam)
   {
     damage = dam;
@@ -32,7 +32,7 @@ public class Bullet
     photo.resize(40, 40);
   }
   
-  public void move() //<>// //<>// idk why this is here but ill leave it //<>//
+  public void move() //<>// //<>// idk why this is here but ill leave it //<>// //<>//
   {
     pos.set(pos.x, pos.y - 5);
     image(photo, pos.x, pos.y, 40, 40);
@@ -44,7 +44,7 @@ public class Bullet
     image(photo, pos.x, pos.y, 40, 40);
   }
   
-  public void allMove(ArrayList<Bullet> bulls)
+  public ArrayList<Bullet> allMove(ArrayList<Bullet> bulls)
   {
     ArrayList<Bullet> live = new ArrayList<Bullet>();
     for (Bullet bull : bulls)
@@ -55,30 +55,42 @@ public class Bullet
         live.add(bull);
       }
     }
-    bulls = live;
-    
+    return live;
   }
   
-
-    public void allMove1(ArrayList<Bullet> bulls)
+    public ArrayList<Bullet> allMove1(ArrayList<Bullet> bulls)
   {
+    ArrayList<Bullet> live = new ArrayList<Bullet>();
     for (Bullet bull : bulls)
     {
-      bull.moveEnemy1();
+      if (bull.getStatus()) 
+      {
+        bull.moveEnemy1();
+        live.add(bull);
+      }
     }
+    //this.setAmmo(live);
+    return live;
   }
   
 
   public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
-
   {
     for (Bullet bull : bulls)
     {
-      if (PVector.dist(tar.getPos(), bull.pos) <= 40) // num will cahnge based on eenmy png
-     {
-       tar.loseHealth(damage);
+      int[] hb =  tar.getHitbox();
+      int[] dims = tar.getDims();
+      PVector pop = tar.getPos();
+     //if (abs(tar.getPos().x - bull.pos.x + (dims[0]/3)) <= hb[0] && abs(tar.getPos().y -  bull.pos.y  + (dims[1]/3)) <= hb[1])
+     // {
+     //  bull.setStatus(false);
+     //  tar.loseHealth(damage);
+     // }
+      if (((pop.x + 70 <= bull.pos.x) && (bull.pos.x <= pop.x + 130 ))&& ((pop.y + 25 <= bull.pos.y) && bull.pos.y <= pop.y + 175)); 
+      {
        bull.setStatus(false);
-     }
+       tar.loseHealth(damage);
+      }
     }
   }
   
@@ -96,4 +108,9 @@ public class Bullet
   //{
   //  return pos;
   //}
+  
+   //public void setAmmo(ArrayList<Bullet> pop)
+   // {
+   //   bullets = pop;
+   // }
 }
