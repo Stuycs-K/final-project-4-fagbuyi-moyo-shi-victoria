@@ -69,8 +69,15 @@ public class Bullet
   {
     for (Bullet bull : bulls)
     {
-      int[] dims =  tar.getDims();
-     if (abs(tar.getPos().x - bull.pos.x) <= dims[0] && abs(tar.getPos().y -  bull.pos.y) <= dims[1])
+      int[] hb =  tar.getHitbox();
+      int[] dims = tar.getDims();
+      PVector pop = tar.getPos();
+     //if (abs(tar.getPos().x - bull.pos.x + (dims[0]/3)) <= hb[0] && abs(tar.getPos().y -  bull.pos.y  + (dims[1]/3)) <= hb[1])
+     // {
+     //  bull.setStatus(false);
+     //  tar.loseHealth(damage);
+     // }
+      if (((pop.x + 70 <= bull.pos.x) && (bull.pos.x <= pop.x + 130 ))&& ((pop.y + 25 <= bull.pos.y) && bull.pos.y <= pop.y + 175)); 
       {
        bull.setStatus(false);
        tar.loseHealth(damage);

@@ -9,7 +9,7 @@ int countdown;
 void setup()
 {
 
-  size(1200, 1200);
+  size(800, 1000); // monitro pizel is 1920 x 1080;
   //bullets = new ArrayList<Bullet>();
   place = new Bullet(new PVector(600, 100));
   //moving backgroud somewhere yeah
@@ -65,6 +65,7 @@ void draw()
   place.applyDamage(enemy1.getAmmo(), player);
   enemy1.direction();
   player.display();
+  player.showHb();
  // image(imageS,0,0);
 //d enemy1.display();
 }
