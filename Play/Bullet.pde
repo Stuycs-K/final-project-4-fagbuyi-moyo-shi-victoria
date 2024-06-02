@@ -6,15 +6,24 @@ public class Bullet
   private PImage photo;
   boolean alive;
   
-  public Bullet(PVector spawnPoint)
+  public Bullet(int num,PVector spawnPoint)
   {
     damage = 5;
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
-    photo = loadImage("bullet.png");
-    //photo.resize(40, 40);
+    if(num==1)
+    photo = loadImage("blueBullet.png");
+    if(num==2)
+    photo = loadImage("redBullet.png");
+    photo.resize(80,80);
     alive = true;
   }
-  
+    public Bullet(PVector spawnPoint)
+  {
+    pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
+    photo = loadImage("bullet.png");
+    photo.resize(40, 40);
+  }
+   //<>//
   public Bullet(PVector spawnPoint, int dam)
   {
     damage = dam;
@@ -65,7 +74,6 @@ public class Bullet
   }
   
 
-////
   public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
   {
     for (Bullet bull : bulls)

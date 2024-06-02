@@ -1,20 +1,27 @@
 Bullet place;
 //ArrayList<Bullet> bullets;
 E1 enemy1;
-ArrayList<Spaceship> enemies;
+E1 enemy2;
+E1 enemy3;
+ArrayList<Enemy> enemies=new ArrayList<Enemy>();
 Player player;
 int countdown;
+ArrayList<Bullet> bullets;
 
 //we should have a game class so draw and setup and less chunky
 void setup()
 {
 
-  size(800, 1000); // monitro pizel is 1920 x 1080;
-  //bullets = new ArrayList<Bullet>();
+  size(950, 1000);
+  bullets = new ArrayList<Bullet>();
   place = new Bullet(new PVector(600, 100));
   //moving backgroud somewhere yeah
   player = new Player();
-  enemy1 = new E1();
+ enemy1 = new E1();
+   enemies.add( new E1(100,100));
+   enemies.add(new E1(400,100));
+   enemies.add(new E1(700,100));
+  
   countdown = 600;
 }
 
@@ -54,18 +61,21 @@ void draw()
 
   background(200);
   //bk();
-  //countdown--;
-  //if (countdown == 0) countdown = 600;
-  enemy1.display();
+
+  player.showHb();
+  countdown--;
+  if (countdown == 0) countdown = 600;
   healthBar(player);
   player.move();
-  enemy1.move();
-  place.allMove(player.getAmmo());
-  place.applyDamage(player.getAmmo(), enemy1);
-  place.applyDamage(enemy1.getAmmo(), player);
-  enemy1.direction();
-  player.display();
-  player.showHb();
+  place.allMove(bullets);
+ player.display();
+ 
+    for (Enemy en : enemies){
+           en.direction();
+ en.move();
+   en.display();
+      place.applyDamage(bullets, en);
+}
  // image(imageS,0,0);
 //d enemy1.display();
 }
@@ -80,8 +90,8 @@ void draw()
       sPressed=true;
      else if(key=='d')
        dPressed=true;
-    if (key== 'q') player.shoot();
-    //if (key == 'j') player.loseHealth(5);
+    if (key== ' ')
+    spacePressed=true;
   //ad this to relase and maybe maybe a timer for spamming
   }
     
@@ -94,5 +104,7 @@ void draw()
       sPressed=false;
      else if(key=='d')
        dPressed=false;
+      if (key== ' ')
+    spacePressed=false;
   }
   

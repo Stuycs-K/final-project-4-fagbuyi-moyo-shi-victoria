@@ -12,6 +12,7 @@ public class Spaceship
  ///
  ArrayList<Bullet> bullets;
  int[] Hitbox;
+
   public Spaceship()
   {
     /*
@@ -55,11 +56,12 @@ public class Spaceship
       */
   }
   
-   public void shoot()
+   public Bullet  shoot()
   {
     //only callled when q is pressed
-    Bullet bull = new Bullet(position);
+    Bullet bull = new Bullet(1,position);
     bullets.add(bull);
+    return bull;
   }
   
   public void loseHealth(int dam) //fix
