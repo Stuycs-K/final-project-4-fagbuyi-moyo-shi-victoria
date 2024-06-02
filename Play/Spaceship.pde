@@ -9,6 +9,7 @@ public class Spaceship
  int speed;
   PImage imageS;
  PVector position, velocity;
+ ///
  ArrayList<Bullet> bullets;
  int[] Hitbox;
   public Spaceship()
@@ -25,6 +26,7 @@ public class Spaceship
     health = 100; // assuming 100 is max health
     position = new PVector(0 + 100, 0 + 100);
     shooting = false;
+    ///
     bullets = new ArrayList<Bullet>();
     Hitbox = new int[2];
 
@@ -78,6 +80,8 @@ public class Spaceship
   {
     return position;
   }
+  
+  ///
   
   public int[] getDims()
   {

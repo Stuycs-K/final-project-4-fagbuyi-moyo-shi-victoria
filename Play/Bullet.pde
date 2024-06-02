@@ -65,6 +65,7 @@ public class Bullet
   }
   
 
+////
   public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
   {
     for (Bullet bull : bulls)

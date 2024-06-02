@@ -10,6 +10,7 @@ public class Player extends Spaceship{
     position = new PVector(0 + width/2, 0 + height/2);
     velocity=new PVector(0,0);
     //circle(position.x, position.y, 100);
+    ///
     bullets = new ArrayList<Bullet>();
     Hitbox = new int[]{60, 150};
   }
@@ -39,7 +40,7 @@ public class Player extends Spaceship{
    // image(imageS,position.x, position.y);
   }
 
-
+///
     public void showHb()
   {
     rect(position.x + 70, position.y + 25, Hitbox[0], Hitbox[1]);
