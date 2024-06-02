@@ -16,7 +16,22 @@ created Enemy and Player subclasses, also E1, E2, E3 subclasses and transfered c
 loaded in enemy spaceship, problem with nonstatic variables, not sure how to fix
 
 ### date 5/28
-fixed problem with non static variables and enemy spawn, added enemy png and random movement for enemies
+fixed problem with non static variables and enemy spawn, added enemy png and random movement for enemies, stuck on timing
+
+### date 5/28
+fixed timing issue for movement, random movement in enemies now stays within borders, working on multiple enemies
+
+### date 5/29
+got enemies to shoot back on a timer, fixed bullet spawn rate
+
+### date 5/30
+worked on spawning multiple enemies,created enemy arraylist to keep track and edited draw to make it apply to all enemies
+
+### date 5/31
+made enemies not overlap as much with borders, make them stay in top half of screen, worked on changing png for bullets
+
+### date 6/1
+finished changing bullet pngs for enemy and player, removed background from enemy, made player unable to go out of bounds, fixed player shooting issue (can shoot while moving now and no more spamming)
 
 ## GROUP MEMBER 2 (moyo)
 
@@ -46,3 +61,10 @@ merged with main. got multiple bullets to sapwn but they dont move.
 ### date 05/28
 
 got multiple bullets to move at once, changed bullet orientation, made a health bar for player, started fixing bullet despawning
+
+### date 05/29
+
+bullets fully disaapear and deal damage to enemy, started moving background
+
+### date 05/30
+merged, fixed bullet dectection range, made it so bullets actully stop dealing damage after despawing, add bullets arraylist as spaceship class variable
