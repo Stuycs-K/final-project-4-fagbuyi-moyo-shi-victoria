@@ -3,7 +3,7 @@ ArrayList<Bullet> bullets2;
 E1 enemy1;
 E1 enemy2;
 E1 enemy3;
-ArrayList<Enemy> enemies=new ArrayList<Enemy>();
+ArrayList<E1> enemies=new ArrayList<E1>();
 Player player;
 int countdown;
 Background b;
@@ -58,6 +58,18 @@ void healthBar(Spaceship player)
   rect(loc.x, loc.y + 181, health, 14, 6);
 }
 
+//public ArrayList<E1> despawn(ArrayList<E1> en)
+//    {
+//      ArrayList<E1> live =  new ArrayList<E1>();
+//      for (E1 ene : en)
+//      {
+//        if (ene.getHealth() != 0)
+//        {
+//          live.add(ene);
+//        }
+//      }
+//      return live;
+//    }
 
 void add(){
 if(frameCount%5==0){
@@ -76,14 +88,12 @@ void draw()
   for (Background ba : back){
   ba.move();
   }
-
   countdown--;
   if (countdown == 0) countdown = 600;
   healthBar(player);
   player.move();
   place.allMove(player.getAmmo());
- player.display();
- 
+  player.display();
     for (Enemy en : enemies)
     {
       en.move();
@@ -92,43 +102,14 @@ void draw()
       place.applyDamage(en.getAmmo(), player);
       place.applyDamage(player.getAmmo(), en);
     }
-//enemies = Spaceship.despawn(enemies);
- // image(imageS,0,0);
-//d enemy1.display();
+enemies = enemy1.despawn(enemies);
+if (player.getHealth() == 0)
+{
+  stop();
+  // and then death screen
+}
 }
 
-//void draw()
-//{
-
-//  background(200);
-//  //bk();
-//  //countdown--;
-//  //if (countdown == 0) countdown = 600;
-//  for (Enemy en : enemies)
-//  {
-//    en.display();
-//  }
-//  healthBar(player);
-//  player.move();
-//  for (Enemy en : enemies)
-//  {
-//    en.move();
-//  }
-//  place.allMove(player.getAmmo());
-//  for (Enemy en : enemies)
-//  {
-//    place.applyDamage(player.getAmmo(), en);
-//    place.applyDamage(en.getAmmo(), player);
-//  }
-//  for (Enemy en : enemies)
-//  {
-//    en.direction();
-//  }
-//  player.display();
-//  //player.showHb();
-// // image(imageS,0,0);
-////d enemy1.display();
-//}
 
   void keyPressed()
   {
