@@ -73,24 +73,38 @@ public class Bullet
     return live;
   }
   
+  
+    //make senemy g=hitbox smalelr
+    public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
+  {
+    for (Bullet bull : bulls)
+    {
+      int[] dims =  tar.getDims();
+     if (abs(tar.getPos().x - bull.pos.x) <= dims[0] && abs(tar.getPos().y -  bull.pos.y) <= dims[1]) // will have to change based on um enenmy size
+      {
+       tar.loseHealth(damage);
+       bull.setStatus(false);
+      }
+    }
+  }
 
-  public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
+  public void applyDamage1(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
   {
     for (Bullet bull : bulls)
     {
       int[] hb =  tar.getHitbox();
       int[] dims = tar.getDims();
       PVector pop = tar.getPos();
-     //if (abs(tar.getPos().x - bull.pos.x + (dims[0]/3)) <= hb[0] && abs(tar.getPos().y -  bull.pos.y  + (dims[1]/3)) <= hb[1])
-     // {
-     //  bull.setStatus(false);
-     //  tar.loseHealth(damage);
-     // }
-      if (((pop.x + 70 <= bull.pos.x) && (bull.pos.x <= pop.x + 130 ))&& ((pop.y + 25 <= bull.pos.y) && bull.pos.y <= pop.y + 175)); 
+      if (((pop.x + dims[0] <= bull.pos.x) && (bull.pos.x <= pop.x + dims[0] ))&& ((pop.y + dims[1] <= bull.pos.y) && bull.pos.y <= pop.y + dims[1])); 
       {
-       bull.setStatus(false);
        tar.loseHealth(damage);
+       bull.setStatus(false);
       }
+      //if (((pop.x + 70 <= bull.pos.x) && (bull.pos.x <= pop.x + 130 ))&& ((pop.y + 25 <= bull.pos.y) && bull.pos.y <= pop.y + 175)); 
+      //{
+      // bull.setStatus(false);
+      // tar.loseHealth(5);
+      //}
     }
   }
   

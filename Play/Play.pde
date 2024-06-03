@@ -1,19 +1,18 @@
 Bullet place;
-//ArrayList<Bullet> bullets;
+ArrayList<Bullet> bullets2;
 E1 enemy1;
 E1 enemy2;
 E1 enemy3;
 ArrayList<Enemy> enemies=new ArrayList<Enemy>();
 Player player;
 int countdown;
-ArrayList<Bullet> bullets;
 
 //we should have a game class so draw and setup and less chunky
 void setup()
 {
 
   size(950, 1000);
-  bullets = new ArrayList<Bullet>();
+  bullets2 = new ArrayList<Bullet>();
   place = new Bullet(new PVector(600, 100));
   //moving backgroud somewhere yeah
   player = new Player();
@@ -44,7 +43,7 @@ void bk()
   //random(12);
 }
 
-void healthBar(Player player) //move to spaceship
+void healthBar(Player player)
 {
   PVector loc = player.getPos();
   int health =  player.getHealth();
@@ -61,25 +60,25 @@ void draw()
 
   background(200);
   //bk();
-
-  player.showHb();
   countdown--;
   if (countdown == 0) countdown = 600;
   healthBar(player);
   player.move();
-  place.allMove(bullets);
+  place.allMove(player.getAmmo());
  player.display();
  
-    for (Enemy en : enemies){
-           en.direction();
- en.move();
-   en.display();
-      place.applyDamage(bullets, en);
+    for (Enemy en : enemies)
+    {
+      place.applyDamage(player.getAmmo(), en);
+     en.move();
+      en.display();
+      place.applyDamage1(bullets2, player);
+      en.direction();
 }
+//enemies = Spaceship.despawn(enemies);
  // image(imageS,0,0);
 //d enemy1.display();
 }
- 
   void keyPressed()
   {
     if(key=='w')
