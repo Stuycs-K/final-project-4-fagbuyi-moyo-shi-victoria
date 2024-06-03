@@ -1,6 +1,5 @@
 
 public class E1 extends Enemy{
-  ArrayList<Bullet> bullets=new ArrayList<Bullet>();
     int temp=int(random(0,4));
     int time=millis();
 int time2=millis();
@@ -9,6 +8,7 @@ int xSpawn, ySpawn;
   public E1()
     {
       super();
+       bullets=new ArrayList<Bullet>();
    imageS=loadImage("enemy1.png");
     health = 100; // assuming 100 is max health
     position = new PVector(0 + 300, 0 + 100);

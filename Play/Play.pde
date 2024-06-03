@@ -89,7 +89,7 @@ void draw()
       en.move();
       en.display();
       en.direction();
-      place.applyDamage2(en.getAmmo(), player);
+      place.applyDamage(en.getAmmo(), player);
       place.applyDamage(player.getAmmo(), en);
     }
 //enemies = Spaceship.despawn(enemies);

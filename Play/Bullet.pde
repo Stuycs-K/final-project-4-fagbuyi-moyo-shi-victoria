@@ -30,8 +30,9 @@ public class Bullet
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
     photo = loadImage("bullet.png");
     photo.resize(40, 40);
+     alive = true;
   }
-  
+   //<>//
   public void move() //<>// //<>// idk why this is here but ill leave it //<>// //<>//
   {
     pos.set(pos.x, pos.y - 5);
@@ -94,7 +95,7 @@ public class Bullet
     for (Bullet bull : bulls)
     {
       int[] dims =  tar.getDims();
-     if (abs(tar.getPos().x - bull.pos.x + 80) <= dims[0] && abs(tar.getPos().y +  bull.pos.y) <= dims[1]) // will have to change based on um enenmy size
+     if   (abs(tar.getPos().x - bull.pos.x + 80) <= dims[0] && abs(tar.getPos().y +  bull.pos.y) <= dims[1]) // will have to change based on um enenmy size
       {
         System.out.println("pop");
        tar.loseHealth(damage);
