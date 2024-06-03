@@ -17,12 +17,12 @@ public class Bullet
     photo.resize(80,80);
     alive = true;
   }
-    public Bullet(PVector spawnPoint)
-  {
-    pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
-    photo = loadImage("bullet.png");
-    photo.resize(40, 40);
-  }
+  //  public Bullet(PVector spawnPoint)
+  //{
+  //  pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
+  //  photo = loadImage("bullet.png");
+  //  photo.resize(40, 40);
+  //}
    //<>//
   public Bullet(PVector spawnPoint, int dam)
   {
@@ -80,8 +80,23 @@ public class Bullet
     for (Bullet bull : bulls)
     {
       int[] dims =  tar.getDims();
-     if (abs(tar.getPos().x - bull.pos.x) <= dims[0] && abs(tar.getPos().y -  bull.pos.y) <= dims[1]) // will have to change based on um enenmy size
+     if (abs(tar.getPos().x - bull.pos.x + 80) <= dims[0] && abs(tar.getPos().y -  bull.pos.y + 40) <= dims[1]) // will have to change based on um enenmy size
       {
+        //System.out.println("pop2");
+       tar.loseHealth(damage);
+       bull.setStatus(false);
+      }
+    }
+  }
+  
+      public void applyDamage2(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
+  {
+    for (Bullet bull : bulls)
+    {
+      int[] dims =  tar.getDims();
+     if (abs(tar.getPos().x - bull.pos.x + 80) <= dims[0] && abs(tar.getPos().y +  bull.pos.y) <= dims[1]) // will have to change based on um enenmy size
+      {
+        System.out.println("pop");
        tar.loseHealth(damage);
        bull.setStatus(false);
       }

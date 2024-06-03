@@ -84,7 +84,7 @@ int xSpawn, ySpawn;
      image(imageS,position.x, position.y);
 
 
-   bullets = place.allMove1(bullets);
+   this.bullets = place.allMove1(this.bullets);
      // }}
                  
     }

@@ -13,7 +13,7 @@ void setup()
 
   size(950, 1000);
   bullets2 = new ArrayList<Bullet>();
-  place = new Bullet(new PVector(600, 100));
+  place = new Bullet(1, new PVector(600, 100));
   //moving backgroud somewhere yeah
   player = new Player();
  enemy1 = new E1();
@@ -43,7 +43,7 @@ void bk()
   //random(12);
 }
 
-void healthBar(Player player)
+void healthBar(Spaceship player)
 {
   PVector loc = player.getPos();
   int health =  player.getHealth();
@@ -69,16 +69,50 @@ void draw()
  
     for (Enemy en : enemies)
     {
-      place.applyDamage(player.getAmmo(), en);
-     en.move();
+      en.move();
       en.display();
-      place.applyDamage1(bullets2, player);
       en.direction();
-}
+      place.applyDamage2(en.getAmmo(), player);
+      place.applyDamage(player.getAmmo(), en);
+    }
 //enemies = Spaceship.despawn(enemies);
  // image(imageS,0,0);
 //d enemy1.display();
 }
+
+//void draw()
+//{
+
+//  background(200);
+//  //bk();
+//  //countdown--;
+//  //if (countdown == 0) countdown = 600;
+//  for (Enemy en : enemies)
+//  {
+//    en.display();
+//  }
+//  healthBar(player);
+//  player.move();
+//  for (Enemy en : enemies)
+//  {
+//    en.move();
+//  }
+//  place.allMove(player.getAmmo());
+//  for (Enemy en : enemies)
+//  {
+//    place.applyDamage(player.getAmmo(), en);
+//    place.applyDamage(en.getAmmo(), player);
+//  }
+//  for (Enemy en : enemies)
+//  {
+//    en.direction();
+//  }
+//  player.display();
+//  //player.showHb();
+// // image(imageS,0,0);
+////d enemy1.display();
+//}
+
   void keyPressed()
   {
     if(key=='w')
