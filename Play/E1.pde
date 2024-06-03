@@ -3,6 +3,7 @@ public class E1 extends Enemy{
     int temp=int(random(0,4));
     int time=millis();
 int time2=millis();
+int time3=millis();
 int xSpawn, ySpawn;
       Bullet place = new Bullet(2,new PVector(600, 100));
   public E1()
@@ -50,14 +51,25 @@ int xSpawn, ySpawn;
            //bullets.add(new Bullet(new PVector(position.x,position.y+200)));
     time = millis();
   }
-    else if (millis() > time2 + 500)
+    else if (millis() > time2 + 2000)
   {
-           bullets.add(new Bullet(2,new PVector(position.x,position.y+200)));
+          shoot3();
     time2 = millis();
   }
 
 }
 
+void shoot3(){
+ //nt rep=0;
+   //  while (millis() > time3 + 500){
+     while(millis()<time3+1000)
+     if(millis()>time3+200)
+       bullets.add(new Bullet(2,new PVector(position.x,position.y+200)));
+           if(millis()>time3+400)
+       bullets.add(new Bullet(2,new PVector(position.x,position.y+200)));
+       //time3=millis();
+     //}
+}
   
   void display(){
     image(imageS,position.x, position.y);}
