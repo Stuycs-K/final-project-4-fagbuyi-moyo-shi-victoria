@@ -8,7 +8,11 @@ public class Spaceship
 
  int speed;
   PImage imageS;
- PVector position;
+ PVector position, velocity;
+ ///
+ ArrayList<Bullet> bullets;
+ int[] Hitbox;
+
   public Spaceship()
   {
     /*
@@ -23,6 +27,9 @@ public class Spaceship
     health = 100; // assuming 100 is max health
     position = new PVector(0 + 100, 0 + 100);
     shooting = false;
+    ///
+    bullets = new ArrayList<Bullet>();
+    Hitbox = new int[2];
 
   }
   
@@ -49,14 +56,15 @@ public class Spaceship
       */
   }
   
-   public Bullet shoot()
+   public Bullet  shoot()
   {
     //only callled when q is pressed
     Bullet bull = new Bullet(1,position);
+    bullets.add(bull);
     return bull;
   }
   
-  public void loseHealth(int dam)
+  public void loseHealth(int dam) //fix
   {
     health -= dam;
     if (health < 0)
@@ -70,11 +78,33 @@ public class Spaceship
     return health;
   }
   
-  public PVector getPos() // only putting now so bullet can get postion of um spacehip
+  public PVector getPos()
   {
     return position;
   }
   
+  ///
+  
+  public int[] getDims()
+  {
+    int[] pop = new int[]{imageS.width, imageS.height};
+    return pop;
+  }
+  
+  public ArrayList<Bullet> getAmmo()
+  {
+    return bullets;
+  }
+  
+  public int[] getHitbox()
+  {
+    return Hitbox;
+  }
+  
+  //public void showHb()
+  //{
+  //  rect(position.x + imageS, position.y, Hitbox[0], Hitbox[1]);
+  //}
   
   void display()
   {
