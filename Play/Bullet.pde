@@ -35,13 +35,13 @@ public class Bullet
   public void move() //<>// //<>// idk why this is here but ill leave it //<>//
   {
     pos.set(pos.x, pos.y - 5);
-    image(photo, pos.x, pos.y, 40, 40);
+    image(photo, pos.x, pos.y, 70, 70);
   }
   
     public void moveEnemy1()
   {
     pos.set(pos.x, pos.y + 5);
-    image(photo, pos.x, pos.y, 40, 40);
+    image(photo, pos.x, pos.y, 70, 70);
   }
   
   public void allMove(ArrayList<Bullet> bulls)

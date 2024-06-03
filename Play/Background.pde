@@ -15,7 +15,7 @@ public class Background
   */
   {
     pos=new PVector(random(width),0);
-    circle(pos.x, pos.y, 10);
+    circle(pos.x, pos.y, 5);
     
 }
 
@@ -28,6 +28,6 @@ void display(){
 
 void move(){
   pos.y+=13;
-  circle(pos.x, pos.y, 10);
+  circle(pos.x, pos.y, 5);
 }
 }
