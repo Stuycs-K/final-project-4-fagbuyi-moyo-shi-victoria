@@ -1,6 +1,4 @@
 
-
-
 public class E1 extends Enemy{
   ArrayList<Bullet> bullets=new ArrayList<Bullet>();
     int temp=int(random(0,4));
@@ -86,9 +84,10 @@ int xSpawn, ySpawn;
      image(imageS,position.x, position.y);
 
 
-   place.allMove1(bullets);
+   this.bullets = place.allMove1(this.bullets);
      // }}
                  
     }
+    
   
 }
