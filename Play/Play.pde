@@ -6,6 +6,8 @@ E1 enemy3;
 ArrayList<Enemy> enemies=new ArrayList<Enemy>();
 Player player;
 int countdown;
+Background b;
+ArrayList<Background> back=new ArrayList<Background>();
 
 //we should have a game class so draw and setup and less chunky
 void setup()
@@ -22,6 +24,7 @@ void setup()
    enemies.add(new E1(700,100));
   
   countdown = 600;
+  b=new Background();
 }
 
 void bk()
@@ -55,11 +58,25 @@ void healthBar(Player player)
   rect(loc.x, loc.y + 181, health, 14, 6);
 }
 
+
+void add(){
+if(frameCount%5==0){
+back.add(new Background());
+}
+}
+
+
 void draw()
 {
 
-  background(200);
+  background(0);
   //bk();
+  fill(255);
+  add();
+  for (Background ba : back){
+  ba.move();
+  }
+
   countdown--;
   if (countdown == 0) countdown = 600;
   healthBar(player);
