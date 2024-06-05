@@ -8,7 +8,7 @@ public class Bullet
   
   public Bullet(int num,PVector spawnPoint)
   {
-    damage = 5;
+    damage = 0;
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
     if(num==1)
     photo = loadImage("blueBullet.png");
@@ -24,13 +24,16 @@ public class Bullet
   //  photo.resize(40, 40);
   //}
    //<>//
-  public Bullet(PVector spawnPoint, int dam)
+  public Bullet(int num,PVector spawnPoint, int dam)
   {
     damage = dam;
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
-    photo = loadImage("bullet.png");
-    photo.resize(40, 40);
-     alive = true;
+    if(num==1)
+    photo = loadImage("blueBullet.png");
+    if(num==2)
+    photo = loadImage("redBullet.png");
+    photo.resize(80,80);
+    alive = true;
   }
    //<>//
   public void move() //<>// //<>// idk why this is here but ill leave it //<>// //<>//
@@ -54,6 +57,11 @@ public class Bullet
       {
         bull.move();
         live.add(bull);
+        bull = new Bullet(1, bull.pos, 0);
+      }
+      else
+      {
+        bull = new Bullet(1, bull.pos, 0);
       }
     }
     return live;

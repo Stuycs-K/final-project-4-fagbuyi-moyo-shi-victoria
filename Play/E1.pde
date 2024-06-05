@@ -100,7 +100,7 @@ int xSpawn, ySpawn;
         }
         else
         {
-          score++;
+          score += 3;
         }
       }
       return live;
