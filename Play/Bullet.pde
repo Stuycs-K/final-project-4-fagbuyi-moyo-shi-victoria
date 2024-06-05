@@ -1,21 +1,20 @@
-
 public class Bullet
 {
-  private int damage;
+  private float damage;
   private PVector pos;
   private PImage photo;
   boolean alive;
   
-  public Bullet(int num,PVector spawnPoint)
+  public Bullet(int num,PVector spawnPoint, boolean live)
   {
-    damage = 0;
+    damage = 1;
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
     if(num==1)
     photo = loadImage("blueBullet.png");
     if(num==2)
     photo = loadImage("redBullet.png");
     photo.resize(80,80);
-    alive = true;
+    alive = live;
   } //<>//
   //  public Bullet(PVector spawnPoint)
   //{
@@ -24,7 +23,7 @@ public class Bullet
   //  photo.resize(40, 40);
   //}
    //<>//
-  public Bullet(int num,PVector spawnPoint, int dam)
+  public Bullet(int num,PVector spawnPoint, float dam, boolean live)
   {
     damage = dam;
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
@@ -33,7 +32,7 @@ public class Bullet
     if(num==2)
     photo = loadImage("redBullet.png");
     photo.resize(80,80);
-    alive = true;
+    alive = live;
   }
    //<>//
   public void move() //<>// //<>// idk why this is here but ill leave it //<>// //<>//
@@ -57,11 +56,11 @@ public class Bullet
       {
         bull.move();
         live.add(bull);
-        bull = new Bullet(1, bull.pos, 0);
+        bull = new Bullet(1, bull.pos, true);
       }
       else
       {
-        bull = new Bullet(1, bull.pos, 0);
+        bull = new Bullet(1, bull.pos, false);
       }
     }
     return live;
