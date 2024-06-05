@@ -8,6 +8,7 @@ Player player;
 int countdown;
 Background b;
 ArrayList<Background> back=new ArrayList<Background>();
+int score;
 
 //we should have a game class so draw and setup and less chunky
 void setup()
@@ -78,6 +79,21 @@ back.add(new Background());
 }
 
 
+void gameOver()
+{
+    fill(242, 240, 242);
+    stroke(0);
+    rect(width/2- 275, height/2 - 175, 550, 350);
+    stroke(255);
+    fill(0);
+    textSize(64);
+    textAlign(CENTER, BOTTOM);
+    text("GAME OVER!", width/2, height/2);
+    textAlign(CENTER, TOP);
+    String s = "YOUR SCORE: " + score;
+    text(s, width/2, height/2);
+}
+
 void draw()
 {
 
@@ -102,12 +118,13 @@ void draw()
       place.applyDamage(en.getAmmo(), player);
       place.applyDamage(player.getAmmo(), en);
     }
-enemies = enemy1.despawn(enemies);
-if (player.getHealth() == 0)
-{
-  stop();
-  // and then death screen
-}
+  enemies = enemy1.despawn(enemies);
+  if (player.getHealth() == 0)
+  {
+    gameOver();
+    stop();
+    // and then death screen
+  }
 }
 
 
@@ -124,6 +141,7 @@ if (player.getHealth() == 0)
     if (key== ' ')
     spacePressed=true; 
     //bullets.add(player.shoot());
+    if (key == 'j')player.loseHealth(100);
   //ad this to relase and maybe maybe a timer for spamming
   }
     

@@ -98,6 +98,10 @@ int xSpawn, ySpawn;
         {
           live.add(ene);
         }
+        else
+        {
+          score++;
+        }
       }
       return live;
     }
