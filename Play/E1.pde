@@ -101,5 +101,22 @@ void shoot3(){
                  
     }
     
+    public ArrayList<E1> despawn(ArrayList<E1> en)
+    {
+      ArrayList<E1> live =  new ArrayList<E1>();
+      for (E1 ene : en)
+      {
+        if (ene.getHealth() != 0)
+        {
+          live.add(ene);
+        }
+        else
+        {
+          score++;
+        }
+      }
+      return live;
+    }
+    
   
 }

@@ -56,11 +56,11 @@ public class Spaceship
       */
   }
   
-   public Bullet  shoot()
+   public Bullet shoot()
   {
     //only callled when q is pressed
     Bullet bull = new Bullet(1,position);
-    bullets.add(bull);
+    //bullets.add(bull);
     return bull;
   }
   
@@ -94,6 +94,11 @@ public class Spaceship
   public ArrayList<Bullet> getAmmo()
   {
     return bullets;
+  }
+  
+  public void setAmmo(ArrayList<Bullet> bulls)
+  {
+    bulls =  bullets;
   }
   
   public int[] getHitbox()
