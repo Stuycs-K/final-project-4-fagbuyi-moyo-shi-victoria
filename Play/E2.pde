@@ -9,6 +9,10 @@ public class E2 extends Enemy
         {
           live.add(ene);
         }
+        else
+        {
+          score++;
+        }
       }
       return live;
     }

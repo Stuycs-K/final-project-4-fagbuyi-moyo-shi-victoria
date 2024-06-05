@@ -90,6 +90,21 @@ public class Bullet
     }
   }
   
+      public void applyDamageEn(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
+  {
+    for (Bullet bull : bulls)
+    {
+      int[] dims =  tar.getDims();
+      PVector pop = tar.getPos();
+     if (((pop.x + 30 <= bull.pos.x) && (bull.pos.x <= pop.x + 140 )) && abs(pop.y -  bull.pos.y) <= dims[1]);
+      {
+        //System.out.println("pop2");
+       tar.loseHealth(damage);
+       bull.setStatus(false);
+      }
+    }
+  }
+  
       public void applyDamage2(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
   {
     for (Bullet bull : bulls)
