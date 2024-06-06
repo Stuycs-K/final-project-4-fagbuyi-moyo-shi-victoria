@@ -25,7 +25,8 @@ public class Bullet
     if(num==2)
     photo = loadImage("redBullet.png");
     if(num==3){
-    photo = loadImage("redBullet.png");
+    photo = loadImage("redLong.png");
+
     tracking =true;
     }
     photo.resize(80,80);
@@ -56,9 +57,18 @@ public class Bullet
     public void moveEnemy1()
   {
     if(tracking){
-
-     pos.set(pos.x+(temp.x/factor), pos.y + (temp.y/factor));
+     
+      
+      
+       //imageMode(CENTER);
+    //pushMatrix();
+   // translate(spawnLoc.x,spawnLoc.y);
+    //rotate(-atan(temp.y/temp.x));
+    pos.set(pos.x+(temp.x/factor), pos.y + (temp.y/factor));
      image(photo, pos.x, pos.y, 70, 70);
+      
+      
+      //popMatrix();
     }
     else{
     pos.set(pos.x, pos.y + 5);
