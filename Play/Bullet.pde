@@ -8,7 +8,9 @@ public class Bullet
   boolean tracking;
   private PVector spawnLoc;
    private PVector playerLoc;
-  
+       PVector temp;
+     int factor;
+     
   public Bullet(int num,PVector spawnPoint)
   {
     damage = 5;
@@ -16,6 +18,8 @@ public class Bullet
     tracking=false;
     spawnLoc=spawnPoint;
     playerLoc=player.position;
+    temp=PVector.sub(playerLoc,spawnLoc);
+    factor=int(temp.mag()/5);
     if(num==1)
     photo = loadImage("blueBullet.png");
     if(num==2)
@@ -52,8 +56,7 @@ public class Bullet
     public void moveEnemy1()
   {
     if(tracking){
-     PVector temp=PVector.sub(playerLoc,spawnLoc);
-     int factor=int(temp.mag()/5);
+
      pos.set(pos.x+(temp.x/factor), pos.y + (temp.y/factor));
      image(photo, pos.x, pos.y, 70, 70);
     }
