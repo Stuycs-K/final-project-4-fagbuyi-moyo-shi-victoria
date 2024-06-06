@@ -37,6 +37,9 @@ finished changing bullet pngs for enemy and player, removed background from enem
 added moving background with stars, fixed enemy shooting bullet hit box not registering 
 
 ### date 6/3
+tried to fix enemy shooting, make it shoot 3 bullets every 2 seconds, didnt work
+
+### date 6/4
 
 ## GROUP MEMBER 2 (moyo)
 
