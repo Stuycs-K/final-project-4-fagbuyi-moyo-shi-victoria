@@ -7,7 +7,7 @@ public class Bullet
   boolean alive;
   boolean tracking;
   private PVector spawnLoc;
-   PVector playerLoc;
+   private PVector playerLoc;
   
   public Bullet(int num,PVector spawnPoint)
   {
@@ -53,7 +53,8 @@ public class Bullet
   {
     if(tracking){
      PVector temp=PVector.sub(playerLoc,spawnLoc);
-     pos.set(pos.x+((temp.x/temp.y)*5), pos.y + 5);
+     int factor=int(temp.mag()/5);
+     pos.set(pos.x+(temp.x/factor), pos.y + (temp.y/factor));
      image(photo, pos.x, pos.y, 70, 70);
     }
     else{
