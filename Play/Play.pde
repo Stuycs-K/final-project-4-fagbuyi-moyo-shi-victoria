@@ -3,7 +3,8 @@ ArrayList<Bullet> bullets2;
 E1 enemy1;
 E1 enemy2;
 E1 enemy3;
-ArrayList<E1> enemies=new ArrayList<E1>();
+Enemy e =new Enemy();
+ArrayList<Enemy> enemies=new ArrayList<Enemy>();
 Player player;
 int countdown;
 Background b;
@@ -118,7 +119,7 @@ void draw()
       place.applyDamage(en.getAmmo(), player);
       place.applyDamage(player.getAmmo(), en);
     }
-  enemies = enemy1.despawn(enemies);
+  enemies = e.despawn(enemies);
   if (player.getHealth() == 0)
   {
     gameOver();
