@@ -40,6 +40,13 @@ added moving background with stars, fixed enemy shooting bullet hit box not regi
 tried to fix enemy shooting, make it shoot 3 bullets every 2 seconds, didnt work
 
 ### date 6/4
+worked on enemy 2, which became enemy 3 cause too op
+
+### date 6/5
+generalize despawn function and filled in e3 class, got it to shoot, remove png background
+
+### date 6/6
+modify e3 shooting, created bullets that tracks player, worked on rotation of png
 
 ## GROUP MEMBER 2 (moyo)
 
