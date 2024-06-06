@@ -14,7 +14,7 @@ int score;
 //we should have a game class so draw and setup and less chunky
 void setup()
 {
-
+  //imageMode(CENTER);
   size(950, 1000);
   player = new Player();
   bullets2 = new ArrayList<Bullet>();
