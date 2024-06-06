@@ -16,10 +16,11 @@ void setup()
 {
 
   size(950, 1000);
+  player = new Player();
   bullets2 = new ArrayList<Bullet>();
   place = new Bullet(1, new PVector(600, 100));
   //moving backgroud somewhere yeah
-  player = new Player();
+  
  enemy1 = new E1();
  //  enemies.add( new E1(100,100));
    //enemies.add(new E1(400,100));

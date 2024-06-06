@@ -5,15 +5,25 @@ public class Bullet
   private PVector pos;
   private PImage photo;
   boolean alive;
+  boolean tracking;
+  private PVector spawnLoc;
+   PVector playerLoc;
   
   public Bullet(int num,PVector spawnPoint)
   {
     damage = 5;
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
+    tracking=false;
+    spawnLoc=spawnPoint;
+    playerLoc=player.position;
     if(num==1)
     photo = loadImage("blueBullet.png");
     if(num==2)
     photo = loadImage("redBullet.png");
+    if(num==3){
+    photo = loadImage("redBullet.png");
+    tracking =true;
+    }
     photo.resize(80,80);
     alive = true;
   } //<>//
@@ -41,8 +51,15 @@ public class Bullet
   
     public void moveEnemy1()
   {
+    if(tracking){
+     PVector temp=PVector.sub(playerLoc,spawnLoc);
+     pos.set(pos.x+((temp.x/temp.y)*5), pos.y + 5);
+     image(photo, pos.x, pos.y, 70, 70);
+    }
+    else{
     pos.set(pos.x, pos.y + 5);
     image(photo, pos.x, pos.y, 70, 70);
+    }
   }
   
   public ArrayList<Bullet> allMove(ArrayList<Bullet> bulls)

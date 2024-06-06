@@ -52,7 +52,9 @@ int xSpawn, ySpawn;
   }
     else if (millis() > time2 + 500)
   {
-           bullets.add(new Bullet(2,new PVector(position.x,position.y+200)));
+           bullets.add(new Bullet(2,new PVector(position.x+110,position.y+200)));
+            bullets.add(new Bullet(2,new PVector(position.x+160,position.y+200)));
+            bullets.add(new Bullet(3,new PVector(position.x-55,position.y+200)));
     time2 = millis();
   }
 
