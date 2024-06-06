@@ -6,7 +6,7 @@ public class Enemy extends Spaceship{
         public ArrayList<Enemy> despawn(ArrayList<Enemy> en)
     {
       ArrayList<Enemy> live =  new ArrayList<Enemy>();
-      for (Enemy ene : en)sa
+      for (Enemy ene : en)
       {
         if (ene.getHealth() != 0)
         {

@@ -20,7 +20,7 @@ int xSpawn, ySpawn;
     public E3(int x,int y)
     {
       super();
-   imageS=loadImage("enemy1.png");
+   imageS=loadImage("e3.png");
     health = 100; // assuming 100 is max health
     position = new PVector(x,y);
 
@@ -60,7 +60,7 @@ int xSpawn, ySpawn;
 
   
   void display(){
-    image(imageS,position.x, position.y);}
+    image(imageS,position.x, position.y,350,275);}
     
     
     
@@ -81,7 +81,7 @@ int xSpawn, ySpawn;
         position.y-=2;
         if(temp==3)
         position.y+=2;
-     image(imageS,position.x, position.y);
+     image(imageS,position.x, position.y,350,275);
 
 
    this.bullets = place.allMove1(this.bullets);
