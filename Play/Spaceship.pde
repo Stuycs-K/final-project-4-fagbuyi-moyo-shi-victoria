@@ -59,7 +59,7 @@ public class Spaceship
    public Bullet shoot()
   {
     //only callled when q is pressed
-    Bullet bull = new Bullet(1,position, true);
+    Bullet bull = new Bullet(1,position);
     //bullets.add(bull);
     return bull;
   }

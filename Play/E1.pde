@@ -4,7 +4,7 @@ public class E1 extends Enemy{
     int time=millis();
 int time2=millis();
 int xSpawn, ySpawn;
-      Bullet place = new Bullet(2,new PVector(600, 100), true);
+      Bullet place = new Bullet(2,new PVector(600, 100));
   public E1()
     {
       super();
@@ -52,7 +52,7 @@ int xSpawn, ySpawn;
   }
     else if (millis() > time2 + 500)
   {
-           bullets.add(new Bullet(2,new PVector(position.x,position.y+200), true));
+           bullets.add(new Bullet(2,new PVector(position.x,position.y+200)));
     time2 = millis();
   }
 

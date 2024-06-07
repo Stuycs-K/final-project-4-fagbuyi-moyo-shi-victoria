@@ -1,5 +1,5 @@
 Bullet place;
-//ArrayList<Bullet> bullets2;
+ArrayList<Bullet> bullets2;
 E1 enemy1;
 E1 enemy2;
 E1 enemy3;
@@ -15,8 +15,8 @@ void setup()
 {
 
   size(950, 1000);
-  //bullets2 = new ArrayList<Bullet>();
-  place = new Bullet(1, new PVector(600, 100), true);
+  bullets2 = new ArrayList<Bullet>();
+  place = new Bullet(1, new PVector(600, 100));
   //moving backgroud somewhere yeah
   player = new Player();
  enemy1 = new E1();
