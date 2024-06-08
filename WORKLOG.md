@@ -83,3 +83,24 @@ bullets fully disaapear and deal damage to enemy, started moving background
 
 ### date 05/30
 merged, fixed bullet dectection range, made it so bullets actully stop dealing damage after despawing, add bullets arraylist as spaceship class variable
+
+### date 05/31
+troubleshot making hitbox smaller
+
+### date 06/02
+worked on hitbox more and fixed enemies taking damage
+
+### date 06/03
+added death mechanic and a endscreen shows score
+
+### date 06/04
+merged and worked on fixing enemy and player hitbox since it somehow got messed up
+
+### date 06/05
+fixing player's bullets
+
+### date 06/07
+got bullets to actaully stop dealing damage
+
+### date 06/08
+troubleshoot the lag with third phase enemies, and finizalied player's hitbox
