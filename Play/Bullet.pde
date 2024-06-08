@@ -25,7 +25,7 @@ public class Bullet
     if(num==2)
     photo = loadImage("redBullet.png");
     if(num==3){
-    photo = loadImage("redLong.png");
+    photo = loadImage("redBullet.png");
 
     tracking =true;
     }
