@@ -16,17 +16,17 @@ public class Bullet
     damage = 5;
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
     tracking=false;
-    spawnLoc=spawnPoint;
-    playerLoc=player.position;
-    temp=PVector.sub(playerLoc,spawnLoc);
-    factor=int(temp.mag()/5);
+
     if(num==1)
     photo = loadImage("blueBullet.png");
     if(num==2)
     photo = loadImage("redBullet.png");
     if(num==3){
     photo = loadImage("redBullet.png");
-
+        spawnLoc=spawnPoint;
+    playerLoc=player.position;
+    temp=PVector.sub(playerLoc,spawnLoc);
+    factor=int(temp.mag()/5);
     tracking =true;
     }
     photo.resize(80,80);
@@ -81,7 +81,7 @@ public class Bullet
     ArrayList<Bullet> live = new ArrayList<Bullet>();
     for (Bullet bull : bulls)
     {
-      if (bull.getStatus()) 
+      if (bull.getStatus()&&bull.pos.y>0) 
       {
         bull.move();
         live.add(bull);
@@ -95,7 +95,7 @@ public class Bullet
     ArrayList<Bullet> live = new ArrayList<Bullet>();
     for (Bullet bull : bulls)
     {
-      if (bull.getStatus()) 
+      if (bull.getStatus()&&bull.pos.y<height) 
       {
         bull.moveEnemy1();
         live.add(bull);
