@@ -8,6 +8,7 @@ int xSpawn, ySpawn;
       Bullet place = new Bullet(2,new PVector(600, 100));
   public E3()
     {
+
       super();
        bullets=new ArrayList<Bullet>();
    imageS=loadImage("e3.png");
@@ -94,5 +95,6 @@ int xSpawn, ySpawn;
    this.bullets = place.allMove1(this.bullets);
      // }}
                  
+
     }
 }
