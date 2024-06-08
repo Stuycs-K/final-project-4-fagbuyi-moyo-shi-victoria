@@ -50,7 +50,7 @@ void bk()
 void healthBar(Spaceship player)
 {
   PVector loc = player.getPos();
-  int health =  player.getHealth();
+  float health =  player.getHealth();
   stroke(10);
   fill(200);  
   rect(loc.x, loc.y + 180, 100, 15, 6);

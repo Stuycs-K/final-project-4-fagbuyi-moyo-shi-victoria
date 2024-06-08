@@ -16,14 +16,14 @@ public class Bullet
     photo = loadImage("redBullet.png");
     photo.resize(80,80);
     alive = true;
-  } //<>//
+  } //<>// //<>//
   //  public Bullet(PVector spawnPoint)
   //{
   //  pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
   //  photo = loadImage("bullet.png");
   //  photo.resize(40, 40);
   //}
-   //<>//
+   //<>// //<>//
   public Bullet(PVector spawnPoint, int dam)
   {
     damage = dam;
@@ -33,6 +33,7 @@ public class Bullet
      alive = true;
   }
    //<>//
+   //<>// //<>//
   public void move() //<>// //<>// idk why this is here but ill leave it //<>// //<>//
   {
     pos.set(pos.x, pos.y - 5);
@@ -48,12 +49,17 @@ public class Bullet
   public ArrayList<Bullet> allMove(ArrayList<Bullet> bulls)
   {
     ArrayList<Bullet> live = new ArrayList<Bullet>();
-    for (Bullet bull : bulls)
+    for (int i = 0; i < bulls.size(); i++)
     {
+      Bullet bull = bulls.get(i);
       if (bull.getStatus()) 
       {
         bull.move();
         live.add(bull);
+      }
+      else
+      {
+        bulls.remove(bull);
       }
     }
     return live;
@@ -62,15 +68,19 @@ public class Bullet
     public ArrayList<Bullet> allMove1(ArrayList<Bullet> bulls)
   {
     ArrayList<Bullet> live = new ArrayList<Bullet>();
-    for (Bullet bull : bulls)
+    for (int i = 0; i < bulls.size(); i++)
     {
+      Bullet bull = bulls.get(i);
       if (bull.getStatus()) 
       {
         bull.moveEnemy1();
         live.add(bull);
       }
+      else
+      {
+        bulls.remove(bull);
+      }
     }
-    //this.setAmmo(live);
     return live;
   }
   
@@ -160,5 +170,9 @@ public class Bullet
   public void setStatus(boolean stat)
   {
     alive = stat;
+  }
+  public void setDam(int a)
+  {
+    damage = a;
   }
 }

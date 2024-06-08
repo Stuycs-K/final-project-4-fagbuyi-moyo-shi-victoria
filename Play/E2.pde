@@ -11,7 +11,7 @@ public class E2 extends Enemy
         }
         else
         {
-          score++;
+          score += 5;
         }
       }
       return live;

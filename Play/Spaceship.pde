@@ -4,7 +4,7 @@ boolean shooting;
 
 public class Spaceship
 {
-   int health;
+   float health;
 
  int speed;
   PImage imageS;
@@ -64,7 +64,7 @@ public class Spaceship
     return bull;
   }
   
-  public void loseHealth(int dam) //fix
+  public void loseHealth(float dam) //fix
   {
     health -= dam;
     if (health < 0)
@@ -73,7 +73,7 @@ public class Spaceship
     }
   }
   
-  public int getHealth()
+  public float getHealth()
   {
     return health;
   }
