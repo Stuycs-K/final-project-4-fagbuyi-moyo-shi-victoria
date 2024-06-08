@@ -7,7 +7,7 @@ public class Player extends Spaceship{
   public Player()
   {
     imageS=loadImage("file.png");
-    health = 100000; // assuming 100 is max health
+    health = 100; // assuming 100 is max health
     position = new PVector(0 + width/2, 0 + height/2);
 
     //circle(position.x, position.y, 100);

@@ -14,7 +14,12 @@ public class Enemy extends Spaceship{
         }
         else
         {
-          score++;
+          if(ene instanceof E1)
+          score+=3;
+           else if(ene instanceof E2)
+          score+=5;
+           else if(ene instanceof E3)
+          score+=10;
         }
       }
       return live;
