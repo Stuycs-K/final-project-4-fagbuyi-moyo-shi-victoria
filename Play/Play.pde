@@ -28,24 +28,6 @@ void setup()
   b=new Background();
 }
 
-void bk()
-{
-  // so live make the stars jiggle, so like dont use random
-  //if (countdown == 600)
-  //{
-    background(200);
-     fill(198, 22, 247);
-    stroke(15);
-    int x = 5;
-    int y = 5;
-    for (int i = 0; i < 100; i++)
-    {
-      int size = (int) random(80);
-      rect(random(0, width - 50), random(0, height- 50), size, size / 3);
-    //}
-  }
-  //random(12);
-}
 
 void healthBar(Spaceship player)
 {
@@ -115,7 +97,7 @@ void draw()
       en.move();
       en.display();
       en.direction();
-      place.applyDamage(en.getAmmo(), player);
+      place.damagePlayer(en.getAmmo(), player);
       place.applyDamage(player.getAmmo(), en);
     }
   enemies = enemy1.despawn(enemies);
@@ -125,6 +107,7 @@ void draw()
     stop();
     // and then death screen
   }
+  //player.showHb();
 }
 
 
