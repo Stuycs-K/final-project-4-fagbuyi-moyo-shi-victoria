@@ -91,7 +91,7 @@ public class Bullet
     for (Bullet bull : bulls)
     {
       int[] dims =  tar.getDims();
-     if (abs(tar.getPos().x - bull.pos.x + 80) <= dims[0] && abs(tar.getPos().y -  bull.pos.y + 40) <= dims[1]) // will have to change based on um enenmy size
+     if (tar.getPos().x  <= bull.pos.x && abs(tar.getPos().x - bull.pos.x) <= dims[0] - 65 && tar.getPos().y < bull.pos.y && abs(tar.getPos().y -  bull.pos.y) <= dims[1] - 25) // will have to change based on um enenmy size
       {
         //System.out.println("pop2");
        tar.loseHealth(damage);
