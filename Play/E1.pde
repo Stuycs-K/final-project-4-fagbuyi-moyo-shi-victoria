@@ -21,7 +21,7 @@ int xSpawn, ySpawn;
     {
       super();
    imageS=loadImage("enemy1.png");
-    health = 100; // assuming 100 is max health
+    health = 1; // assuming 100 is max health
     position = new PVector(x,y);
 
         xSpawn=x;
