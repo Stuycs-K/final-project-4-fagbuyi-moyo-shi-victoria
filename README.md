@@ -14,7 +14,7 @@ Space- Shoot Bullets
 '3' - Clear all current Enemies and move on to the next wave at the cost of 200 points 
 
 Shortcuts:  
-'R' - Move onto next wave
-'Z' - Gives player 100 points
+'R' - Move onto next wave  
+'Z' - Gives player 100 points  
 'Q' - Quits game
 
