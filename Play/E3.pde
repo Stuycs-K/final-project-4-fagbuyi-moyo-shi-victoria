@@ -16,6 +16,7 @@ int xSpawn, ySpawn;
     position = new PVector(0 + 300, 0 + 100);
     xSpawn=300;
     ySpawn=100;
+    Hitbox =  new int[]{393, 348};
 
      
   }
@@ -56,13 +57,13 @@ int xSpawn, ySpawn;
     else if (millis() > time2 + 500)
 
   {
-         // bullets.add(new Bullet(2,new PVector(position.x+110,position.y+200)));
-       // bullets.add(new Bullet(2,new PVector(position.x+160,position.y+200)));
+          bullets.add(new Bullet(2,new PVector(position.x+110,position.y+200)));
+        bullets.add(new Bullet(2,new PVector(position.x+160,position.y+200)));
     time2 = millis();
   }
       else if (millis() > time3 + 1000)
   {
-            //bullets.add(new Bullet(3,new PVector(position.x-55,position.y+200)));
+            bullets.add(new Bullet(3,new PVector(position.x-55,position.y+200)));
     time3 = millis();
   }
 

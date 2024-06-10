@@ -26,7 +26,6 @@ void setup()
  //enemies.add( new E1(100,100));
   // enemies.add(new E1(400,100));
    //enemies.add(new E1(700,100));
-   //enemies.add(new E3(300,300));
    enemies.add(new Boss(0,0));
   
 
@@ -45,19 +44,6 @@ void healthBar(Spaceship player)
   fill(45, 237, 88);
   rect(loc.x, loc.y + 181, health, 14, 6);
 }
-
-//public ArrayList<E1> despawn(ArrayList<E1> en)
-//    {
-//      ArrayList<E1> live =  new ArrayList<E1>();
-//      for (E1 ene : en)
-//      {
-//        if (ene.getHealth() != 0)
-//        {
-//          live.add(ene);
-//        }
-//      }
-//      return live;
-//    }
 
 void add()
 {
@@ -103,7 +89,7 @@ void draw()
       en.display();
       en.direction();
       place.damagePlayer(en.getAmmo(), player);
-      place.applyDamage(player.getAmmo(), en);
+      place.damageEn(player.getAmmo(), en);
     }
   enemies = e.despawn(enemies);
   if (player.getHealth() == 0)
