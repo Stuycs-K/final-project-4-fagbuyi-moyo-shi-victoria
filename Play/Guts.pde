@@ -97,7 +97,7 @@ void runGame()
     player.bullets.clear();
     mode=1;
     wave=1;
-  player.health=100;
+  player.health=10;
   }
   
   }

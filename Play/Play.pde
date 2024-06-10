@@ -63,7 +63,7 @@ void draw()
     spacePressed=true; 
       if (key== 'r')
     enemies.clear();
-<<<<<<< HEAD
+
     if(key=='1'&&mode!=0&&score>30&&player.health<10){
     player.health+=5;
     score-=30;
@@ -73,8 +73,7 @@ void draw()
 
   //ad this to relase and maybe maybe a timer for spamming
 
-=======
->>>>>>> 961f80ad1fd455667242f34a07cdc0b9f4294e5c
+
   }
     
       void keyReleased(){
