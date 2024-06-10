@@ -47,35 +47,9 @@ public class Player extends Spaceship{
       
   }
 
-    void display()
-  {
-    //color c = color(0, 0, 0);
-   // fill(0);
-    //circle(position.x, position.y, 100);
-   // image(imageS,position.x, position.y);
-  }
-
-///
     public void showHb()
   {
     rect(position.x + 92, position.y + 65, Hitbox[0], Hitbox[1]);
   }
-  
-  
-  //public Bullet shoot()
-  //{
-  //  return super.shoot();
-  //}
-  
-  
-  //public int getHealth()
-  //{
-  //  return super.getHealth();
-  //}
-  
-  //public PVector getPos()
-  //{
-  //  return super.getPos();
-  //}
-
+ 
 }
