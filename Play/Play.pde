@@ -11,6 +11,7 @@ Background b;
 ArrayList<Background> back=new ArrayList<Background>();
 int score;
 int wave;
+int mode;
 boolean waveOver=true;
 
 
@@ -22,6 +23,7 @@ void setup()
   bullets2 = new ArrayList<Bullet>();
   place = new Bullet(1, new PVector(600, 100));
   int wave=1;
+  int mode=1;
 
   //moving backgroud somewhere yeah
   
@@ -108,6 +110,9 @@ void draw()
   for (Background ba : back){
   ba.move();
   }
+  
+//if(mode==1){
+
   if (millis() < 2000) 
     menu("Wave 1","");
   
@@ -154,6 +159,7 @@ else{
     player.bullets.clear();
     wave7();
   }
+
   
   healthBar(player);
   player.move();
@@ -174,8 +180,10 @@ else{
     stop();
     
   }
-  }
 }
+  
+}
+//}
 
 void drawWave(int num){
   int temp=millis();
