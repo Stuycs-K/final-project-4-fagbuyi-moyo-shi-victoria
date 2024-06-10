@@ -12,11 +12,10 @@ int xSpawn, ySpawn;
       super();
        bullets=new ArrayList<Bullet>();
    imageS=loadImage("e3.png");
-    health = 50; // assuming 100 is max health
+    health = 50;
     position = new PVector(0 + 300, 0 + 100);
     xSpawn=300;
     ySpawn=100;
-    Hitbox =  new int[]{393, 348};
 
      
   }
@@ -24,12 +23,10 @@ int xSpawn, ySpawn;
     {
       super();
    imageS=loadImage("e3.png");
-    health = 50; // assuming 100 is max health
+    health = 50; 
     position = new PVector(x,y);
-
         xSpawn=x;
     ySpawn=y;
-
      
   }
   
@@ -65,20 +62,15 @@ int xSpawn, ySpawn;
 }
 
   
-  void display(){
-    image(imageS,position.x, position.y,350,275);}
+  void display()
+  {
+    image(imageS,position.x, position.y,350,275);
+  }
     
     
     
     void move(){
-
       int moving=0;
-      //int temp=1;
-      // if(frameCount % 20 ==0)
-// int temp=int(random(0,4));
-    
-     //   while(frameCount<frameCount+120){
-         //for(int i=0;i<200;i++){
         if(temp==0)
         position.x-=2;
          if(temp==1)
@@ -88,11 +80,6 @@ int xSpawn, ySpawn;
         if(temp==3)
         position.y+=2;
      image(imageS,position.x, position.y,350,275);
-
-
-   this.bullets = place.allMove1(this.bullets);
-     // }}
-                 
-
+   this.bullets = place.allMoveEnemy(this.bullets);
     }
 }

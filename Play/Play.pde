@@ -9,6 +9,7 @@ ArrayList<Background> back=new ArrayList<Background>();
 Background b;
 int score;
 int wave;
+int mode;
 boolean waveOver=true;
 
 
@@ -18,6 +19,7 @@ void setup()
   player = new Player();
   place = new Bullet(1, new PVector(600, 100));
   int wave=1;
+  int mode=0;
   b=new Background();
 }
 
@@ -28,16 +30,22 @@ void draw()
   background(0);
   fill(255);
   add();
-  for (Background ba : back){
+  for (Background ba : back)
+  {
   ba.move();
   }
+  
+
+
   if (millis() < 2000) 
     menu("Wave 1","");
   
+
   else
   {
     runGame();
   }
+
 }
 
   void keyPressed()
@@ -52,7 +60,8 @@ void draw()
        dPressed=true;
     if (key== ' ')
     spacePressed=true; 
-  //ad this to relase and maybe maybe a timer for spamming
+      if (key== 'r')
+    enemies.clear();
   }
     
       void keyReleased(){
