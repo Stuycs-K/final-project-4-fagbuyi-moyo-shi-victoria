@@ -11,6 +11,7 @@ Background b;
 ArrayList<Background> back=new ArrayList<Background>();
 int score;
 
+
 //we should have a game class so draw and setup and less chunky
 void setup()
 {
