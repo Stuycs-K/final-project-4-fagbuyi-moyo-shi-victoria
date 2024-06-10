@@ -112,3 +112,6 @@ got bullets to actaully stop dealing damage
 
 ### date 06/08
 troubleshoot the lag with third phase enemies, and finizalied player's hitbox
+
+### date 06/09
+finalized all enenmy hitboxes, added another tab so setup tab cleaner, added a uhhh powerup, worked on readme, uml protoype stuff, cleaned up files, reconfigured healthbar
