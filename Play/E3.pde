@@ -16,6 +16,7 @@ int xSpawn, ySpawn;
     position = new PVector(0 + 300, 0 + 100);
     xSpawn=300;
     ySpawn=100;
+    Hitbox =  new int[]{393, 348};
 
      
   }

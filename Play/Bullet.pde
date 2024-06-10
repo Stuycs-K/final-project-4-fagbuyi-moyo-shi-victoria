@@ -16,14 +16,14 @@ public class Bullet
     damage = 5;
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
     tracking=false;
-
+ //<>// //<>//
     if(num==1)
     photo = loadImage("blueBullet.png");
     
     if(num==2)
     photo = loadImage("redBullet.png");
     if(num==3){
-    photo = loadImage("redBullet.png");
+    photo = loadImage("redBullet.png"); //<>// //<>//
         spawnLoc=spawnPoint;
     playerLoc=player.position;
     temp=PVector.sub(playerLoc,spawnLoc);
@@ -31,14 +31,15 @@ public class Bullet
     tracking =true;
     }
     photo.resize(80,80);
-    alive = true; //<>//
-  } //<>// //<>// //<>//
-  //  public Bullet(PVector spawnPoint)
-  //{
+    alive = true;
+  } //<>// //<>// //<>// //<>// //<>//
+  //  public Bullet(PVector spawnPoint) //<>// //<>//
+  //{ //<>// //<>//
   //  pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
   //  photo = loadImage("bullet.png");
   //  photo.resize(40, 40);
-  //} //<>//
+  //}
+
    //<>// //<>// //<>//
   public Bullet(PVector spawnPoint, int dam)
   {
@@ -47,9 +48,7 @@ public class Bullet
     photo = loadImage("bullet.png");
     photo.resize(40, 40);
      alive = true;
-  } //<>//
-   //<>// //<>// //<>//
-   //<>// //<>// //<>//
+  }
   public void move() //<>// //<>// idk why this is here but ill leave it //<>// //<>//
   {
     pos.set(pos.x, pos.y - 5);
@@ -120,82 +119,58 @@ public class Bullet
   }
   
   
-    //make senemy g=hitbox smalelr
-    public void applyDamage(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
+    public void damageEn(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
   {
+    
     for (Bullet bull : bulls)
     {
       int[] dims =  tar.getDims();
-     if (abs(tar.getPos().x - bull.pos.x + 80) <= dims[0] && abs(tar.getPos().y -  bull.pos.y + 40) <= dims[1]) // will have to change based on um enenmy size
+      if (dims[0] == 200 && dims[1] == 200)
       {
-        //System.out.println("pop2");
-       tar.loseHealth(damage);
-       bull.setStatus(false);
+        if (tar.getPos().x + 25  <= bull.pos.x && abs(tar.getPos().x - bull.pos.x) <= dims[0] - 90 && tar.getPos().y < bull.pos.y && abs(tar.getPos().y -  bull.pos.y) <= dims[1] - 25) // will have to change based on um enenmy size
+        {
+          //System.out.println("pop2");
+         tar.loseHealth(damage);
+         bull.setStatus(false);
+        } 
+      }
+      else if (dims[0] == 393 && dims[1] == 348)
+      {
+        if (tar.getPos().x <= bull.pos.x && abs(tar.getPos().x - bull.pos.x) <= dims[0] - 125 && tar.getPos().y < bull.pos.y && abs(tar.getPos().y -  bull.pos.y) <= dims[1] - 120) // will have to change based on um enenmy size
+        {
+          //System.out.println("pop2");
+         tar.loseHealth(damage);
+         bull.setStatus(false);
+        } 
+      }
+      else
+      {
+         if (tar.getPos().x  <= bull.pos.x && abs(tar.getPos().x - bull.pos.x) <= 900 && tar.getPos().y < bull.pos.y && abs(tar.getPos().y -  bull.pos.y) <= 305) // will have to change based on um enenmy size
+        {
+          //System.out.println("pop2");
+         tar.loseHealth(damage);
+         bull.setStatus(false);
+        } 
       }
     }
   }
+ 
   
-      public void applyDamageEn(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
+      public void damagePlayer(ArrayList<Bullet> bulls, Player tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
   {
-    for (Bullet bull : bulls)
+        for (Bullet bull : bulls)
     {
-      int[] dims =  tar.getDims();
       PVector pop = tar.getPos();
-     if (((pop.x + 30 <= bull.pos.x) && (bull.pos.x <= pop.x + 140 )) && abs(pop.y -  bull.pos.y) <= dims[1]);
+      PVector corn1 = new PVector(pop.x + 110 - 32, pop.y + 83 - 32);
+      PVector corn2 = new PVector(pop.x + 92 - 30, pop.y + 65 - 30);
+      if (corn2.x <= bull.pos.x && corn1.x >= bull.pos.x && corn2.y <= bull.pos.y && corn1.y >= bull.pos.y)
       {
-        //System.out.println("pop2");
        tar.loseHealth(damage);
        bull.setStatus(false);
       }
     }
   }
   
-      public void applyDamage2(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy? /// also change to spaceship<arrayList> once we get more enenimes spawning
-  {
-    for (Bullet bull : bulls)
-    {
-      int[] dims =  tar.getDims();
-     if   (abs(tar.getPos().x - bull.pos.x + 80) <= dims[0] && abs(tar.getPos().y +  bull.pos.y) <= dims[1]) // will have to change based on um enenmy size
-      {
-        System.out.println("pop");
-       tar.loseHealth(damage);
-       bull.setStatus(false);
-      }
-    }
-  }
-
-  //public void applyDamage1(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
-  //{
-  //  for (Bullet bull : bulls)
-  //  {
-  //    int[] dims =  tar.getDims();
-  //   if (abs(tar.getPos().x - bull.pos.x) <= dims[0] && abs(tar.getPos().y -  bull.pos.y) <= dims[1]) // will have to change based on um enenmy size
-  //    {
-  //     tar.loseHealth(damage);
-  //     bull.setStatus(false);
-  //    }
-  //  }
-  //}
-
-  //public void applyDamage1(ArrayList<Bullet> bulls, Spaceship tar) //shoudlnt have to specify should attack nearsest enemy?
-  //{
-  //  for (Bullet bull : bulls)
-  //  {
-  //    int[] hb =  tar.getHitbox();
-  //    int[] dims = tar.getDims();
-  //    PVector pop = tar.getPos();
-  //    if (((pop.x + dims[0] <= bull.pos.x) && (bull.pos.x <= pop.x + dims[0] ))&& ((pop.y + dims[1] <= bull.pos.y) && bull.pos.y <= pop.y + dims[1])); 
-  //    {
-  //     tar.loseHealth(damage);
-  //     bull.setStatus(false);
-  //    }
-  //    //if (((pop.x + 70 <= bull.pos.x) && (bull.pos.x <= pop.x + 130 ))&& ((pop.y + 25 <= bull.pos.y) && bull.pos.y <= pop.y + 175)); 
-  //    //{
-  //    // bull.setStatus(false);
-  //    // tar.loseHealth(5);
-  //    //}
-  //  }
-  //}
   
   public boolean getStatus() //also might be unneeded
   {

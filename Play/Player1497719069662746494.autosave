@@ -7,13 +7,13 @@ public class Player extends Spaceship{
   public Player()
   {
     imageS=loadImage("file.png");
-    health = 200; // assuming 100 is max health
+    health = 100000; // assuming 100 is max health
     position = new PVector(0 + width/2, 0 + height/2);
 
     //circle(position.x, position.y, 100);
     ///
     bullets = new ArrayList<Bullet>();
-    Hitbox = new int[]{18, 18};
+    Hitbox = new int[]{60, 150};
   }
   
   
@@ -49,33 +49,11 @@ public class Player extends Spaceship{
 
     void display()
   {
-    //color c = color(0, 0, 0);
-   // fill(0);
-    //circle(position.x, position.y, 100);
-   // image(imageS,position.x, position.y);
   }
 
-///
     public void showHb()
   {
-    rect(position.x + 92, position.y + 65, Hitbox[0], Hitbox[1]);
+    rect(position.x + 70, position.y + 25, Hitbox[0], Hitbox[1]);
   }
-  
-  
-  //public Bullet shoot()
-  //{
-  //  return super.shoot();
-  //}
-  
-  
-  //public int getHealth()
-  //{
-  //  return super.getHealth();
-  //}
-  
-  //public PVector getPos()
-  //{
-  //  return super.getPos();
-  //}
 
 }
