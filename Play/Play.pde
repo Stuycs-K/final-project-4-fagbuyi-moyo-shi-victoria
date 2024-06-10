@@ -22,10 +22,11 @@ void setup()
   //moving backgroud somewhere yeah
   
  enemy1 = new E1();
- enemies.add( new E1(100,100));
-   enemies.add(new E1(400,100));
-   enemies.add(new E1(700,100));
-   enemies.add(new E3(300,300));
+ //enemies.add( new E1(100,100));
+  // enemies.add(new E1(400,100));
+   //enemies.add(new E1(700,100));
+   //enemies.add(new E3(300,300));
+   enemies.add(new Boss(0,0));
   
 
   countdown = 600;
@@ -97,7 +98,7 @@ void draw()
   player.display();
     for (Enemy en : enemies)
     {
-      en.move();
+     en.move();
       en.display();
       en.direction();
       place.applyDamage(en.getAmmo(), player);
