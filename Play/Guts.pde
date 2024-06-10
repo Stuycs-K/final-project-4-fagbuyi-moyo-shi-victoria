@@ -103,9 +103,7 @@ void runGame()
   
   }
   else{
-    if(enemies.size()==0){
-    waveOver=true;
-    wave++;}
+
     
   if (wave==1&&waveOver){
     waveOver=false;
@@ -135,10 +133,18 @@ void runGame()
     wave5();
   }
         if (wave==6&&waveOver){
-    waveOver=true;
+    waveOver=false;
     player.bullets.clear();
-    wave=1;
+    wave6();
   }
+          if (wave==7&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave=0;
+          }
+      if(enemies.size()==0){
+    waveOver=true;
+    wave++;}
   
   }
 
@@ -206,8 +212,11 @@ void wave5(){
 
 }
 void wave6(){
-   enemies.add(new E3(50,0));
-   enemies.add(new E3(600,0));
+   enemies.add( new E2(100,0));
+   enemies.add(new E2(700,0));
+   enemies.add( new E3(100,200));
+   enemies.add(new E3(400,200));
+   enemies.add(new E2(700,200));
 
 }
 
