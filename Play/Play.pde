@@ -11,6 +11,7 @@ Background b;
 ArrayList<Background> back=new ArrayList<Background>();
 int score;
 
+
 //we should have a game class so draw and setup and less chunky
 void setup()
 {
@@ -18,11 +19,17 @@ void setup()
   player = new Player();
   bullets2 = new ArrayList<Bullet>();
   place = new Bullet(1, new PVector(600, 100));
-  //enemy1 = new E1();
-  enemies.add( new E3(100,100));
-   //enemies.add(new E1(400,100));
-  // enemies.add(new E1(700,100));
-  //enemies.add(new E3(300,300));
+
+  //moving backgroud somewhere yeah
+  
+ enemy1 = new E1();
+ //enemies.add( new E1(100,100));
+  // enemies.add(new E1(400,100));
+   //enemies.add(new E1(700,100));
+   //enemies.add(new E3(300,300));
+   enemies.add(new Boss(0,0));
+  
+
   countdown = 600;
   b=new Background();
 }
@@ -92,7 +99,7 @@ void draw()
   player.display();
     for (Enemy en : enemies)
     {
-      en.move();
+     en.move();
       en.display();
       en.direction();
       place.applyDamage(en.getAmmo(), player);

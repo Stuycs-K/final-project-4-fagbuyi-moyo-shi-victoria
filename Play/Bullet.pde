@@ -19,6 +19,7 @@ public class Bullet
 
     if(num==1)
     photo = loadImage("blueBullet.png");
+    
     if(num==2)
     photo = loadImage("redBullet.png");
     if(num==3){
@@ -30,14 +31,14 @@ public class Bullet
     tracking =true;
     }
     photo.resize(80,80);
-    alive = true;
+    alive = true; //<>//
   } //<>// //<>// //<>//
   //  public Bullet(PVector spawnPoint)
   //{
   //  pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
   //  photo = loadImage("bullet.png");
   //  photo.resize(40, 40);
-  //}
+  //} //<>//
    //<>// //<>// //<>//
   public Bullet(PVector spawnPoint, int dam)
   {
@@ -46,8 +47,8 @@ public class Bullet
     photo = loadImage("bullet.png");
     photo.resize(40, 40);
      alive = true;
-  }
-   //<>// //<>//
+  } //<>//
+   //<>// //<>// //<>//
    //<>// //<>// //<>//
   public void move() //<>// //<>// idk why this is here but ill leave it //<>// //<>//
   {
