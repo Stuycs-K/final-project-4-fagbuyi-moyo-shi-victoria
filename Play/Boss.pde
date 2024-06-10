@@ -16,7 +16,6 @@ int xSpawn, ySpawn;
     position = new PVector(0 + 300, 0 + 100);
     xSpawn=300;
     ySpawn=100;
-    Hitbox =  new int[]{550, 384};
    // image(imageS,position.x, position.y,1000,700);
 
      
@@ -65,7 +64,7 @@ int xSpawn, ySpawn;
   
   void display(){
     image(imageS,25,-150,900,600);
-   this.bullets = place.allMove1(this.bullets);}
+   this.bullets = place.allMoveEnemy(this.bullets);}
    
     
     
