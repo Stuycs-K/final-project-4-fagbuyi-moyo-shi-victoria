@@ -13,8 +13,10 @@ int xSpawn, ySpawn;
 <<<<<<< HEAD
     health = 10; // assuming 100 is max health
 =======
-    health = 100;
->>>>>>> 961f80ad1fd455667242f34a07cdc0b9f4294e5c
+
+    health = 10; // assuming 100 is max health
+
+>>>>>>> 73268d03d5b5d668722a164e1b34271368033dde
     position = new PVector(0 + 300, 0 + 100);
     xSpawn=300;
     ySpawn=100;
@@ -27,8 +29,10 @@ int xSpawn, ySpawn;
 <<<<<<< HEAD
     health = 10; // assuming 100 is max health
 =======
-    health = 100;
->>>>>>> 961f80ad1fd455667242f34a07cdc0b9f4294e5c
+
+    health = 10; // assuming 100 is max health
+
+>>>>>>> 73268d03d5b5d668722a164e1b34271368033dde
     position = new PVector(x,y);
         xSpawn=x;
     ySpawn=y;     
