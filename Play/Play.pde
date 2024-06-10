@@ -23,7 +23,7 @@ void setup()
   bullets2 = new ArrayList<Bullet>();
   place = new Bullet(1, new PVector(600, 100));
   int wave=1;
-  int mode=1;
+  int mode=0;
 
   //moving backgroud somewhere yeah
   
@@ -31,7 +31,7 @@ void setup()
  //enemies.add( new E1(100,100));
   // enemies.add(new E1(400,100));
    //enemies.add(new E1(700,100));
-   enemies.add(new Boss(0,0));
+  // enemies.add(new Boss(0,0));
 
   
 
@@ -98,12 +98,13 @@ void draw()
   ba.move();
   }
   
-//if(mode==1){
+
 
   if (millis() < 2000) 
     menu("Wave 1","");
   
 else{
+  if(mode==0){
   if(enemies.size()==0){
     waveOver=true;
     wave++;}
@@ -146,6 +147,55 @@ else{
     player.bullets.clear();
     wave7();
   }
+       if (wave==8&&waveOver){
+    waveOver=true;
+    player.bullets.clear();
+    mode=1;
+    wave=1;
+      score=0;
+  player.health=100;
+  }
+  
+  }
+  else{
+    if(enemies.size()==0){
+    waveOver=true;
+    wave++;}
+    
+  if (wave==1&&waveOver){
+    waveOver=false;
+    wave1();
+  }
+  
+    if (wave==2&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave2();
+    
+  }
+      if (wave==3&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave3();
+  }
+  
+    if (wave==4&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave4();
+  }
+      if (wave==5&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave5();
+  }
+        if (wave==6&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave=1;
+  }
+  
+  }
 
   
   healthBar(player);
@@ -167,11 +217,7 @@ else{
     stop();
     
   }
-<<<<<<< HEAD
-=======
-  }
-  //player.showHb();
->>>>>>> f0fc33d1bc21650676c7a035b2ef138d96f50912
+
 }
   
 }
@@ -238,8 +284,10 @@ void wave7(){
     if (key== ' ')
     spacePressed=true; 
     //bullets.add(player.shoot());
-    if (key == 'j')player.loseHealth(100);
-  //ad this to relase and maybe maybe a timer for spamming
+   // if (key == 'j')player.loseHealth(100);
+      if (key== 'r')
+    enemies.clear();
+  
   }
     
       void keyReleased(){
