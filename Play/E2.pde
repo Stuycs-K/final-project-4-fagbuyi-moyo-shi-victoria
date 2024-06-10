@@ -76,13 +76,13 @@ int xSpawn, ySpawn;
      //   while(frameCount<frameCount+120){
          //for(int i=0;i<200;i++){
         if(temp==0)
-        position.x-=2;
+        position.x-=3;
          if(temp==1)
-        position.x+=2;
+        position.x+=3;
       if(temp==2)
-        position.y-=2;
+        position.y-=3;
         if(temp==3)
-        position.y+=2;
+        position.y+=3;
      image(imageS,position.x, position.y);
 
 

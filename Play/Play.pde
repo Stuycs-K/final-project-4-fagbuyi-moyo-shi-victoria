@@ -10,6 +10,8 @@ int countdown;
 Background b;
 ArrayList<Background> back=new ArrayList<Background>();
 int score;
+int wave;
+boolean waveOver=true;
 
 
 //we should have a game class so draw and setup and less chunky
@@ -19,14 +21,16 @@ void setup()
   player = new Player();
   bullets2 = new ArrayList<Bullet>();
   place = new Bullet(1, new PVector(600, 100));
+  int wave=1;
 
   //moving backgroud somewhere yeah
   
- enemy1 = new E1();
+ //enemy1 = new E1();
  //enemies.add( new E1(100,100));
   // enemies.add(new E1(400,100));
    //enemies.add(new E1(700,100));
    enemies.add(new Boss(0,0));
+
   
 
   countdown = 600;
@@ -68,6 +72,20 @@ void gameOver()
     text(s, width/2, height/2);
 }
 
+void menu(String s1,String s2)
+{
+    fill(242, 240, 242);
+    stroke(0);
+    rect(width/2- 275, height/2 - 175, 550, 350);
+    stroke(255);
+    fill(0);
+    textSize(64);
+    textAlign(CENTER, BOTTOM);
+    text(s1, width/2, height/2);
+    textAlign(CENTER, TOP);
+    text(s2, width/2, height/2);
+}
+
 void draw()
 {
 
@@ -77,8 +95,53 @@ void draw()
   for (Background ba : back){
   ba.move();
   }
-  countdown--;
-  if (countdown == 0) countdown = 600;
+  if (millis() < 2000) 
+    menu("Wave 1","");
+  
+else{
+  if(enemies.size()==0){
+    waveOver=true;
+    wave++;}
+    
+  if (wave==1&&waveOver){
+    waveOver=false;
+    wave1();
+  }
+  
+    if (wave==2&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave2();
+    
+  }
+      if (wave==3&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave3();
+  }
+  
+    if (wave==4&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave4();
+  }
+      if (wave==5&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave5();
+  }
+        if (wave==6&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave6();
+  }
+  
+          if (wave==7&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave7();
+  }
+  
   healthBar(player);
   player.move();
   place.allMove(player.getAmmo());
@@ -96,10 +159,59 @@ void draw()
   {
     gameOver();
     stop();
+    
+  }
   }
   //player.showHb();
 }
 
+void drawWave(int num){
+  int temp=millis();
+  while(millis() < temp+2000)
+  gameOver();
+}
+
+void wave1(){
+   enemies.add( new E2(100,100));
+   enemies.add(new E2(400,100));
+   enemies.add(new E2(700,100));
+
+}
+void wave2(){
+   enemies.add( new E1(100,100));
+   enemies.add(new E1(400,100));
+   enemies.add(new E1(700,100));
+}
+void wave3(){
+   enemies.add( new E1(100,0));
+   enemies.add(new E1(700,0));
+   enemies.add( new E2(100,200));
+   enemies.add(new E2(400,200));
+   enemies.add(new E2(700,200));
+}
+
+void wave4(){
+   enemies.add( new E3(100,100));
+   //enemies.add(new E3(400,100));
+   enemies.add(new E3(700,100));
+}
+
+void wave5(){
+   enemies.add(new E2(100,0));
+   enemies.add( new E2(400,300));
+   enemies.add(new E3(400,0));
+   enemies.add(new E2(700,0));
+
+}
+void wave6(){
+   enemies.add(new E3(50,0));
+   enemies.add(new E3(600,0));
+
+}
+
+void wave7(){
+  enemies.add(new Boss(0,0));
+}
 
   void keyPressed()
   {
