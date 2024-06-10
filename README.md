@@ -3,7 +3,7 @@
 
 ## Group Info
 Victoria Shi and Moyo Fagbuyi
-Group Name : Astronautical
+###Group Name : Astronautical
 ## Overview
 Our project is a Top Down Shooter Game, based on the mobile game Phoenix 2, executed in processing. The game begins with a title screen, announcing that the player is in Wave 1. Waves advance after killing all of the current Wave enemies, and they increase in difficulty, with different enemies to face off. The Last Wave is a showdown against the Final Boss. After defeating the final boss, the player moves onto the second game mode, where they will face Waves of enemies until the player dies. In this mode, the player is also granted access to the shop, where they can purchase different powerups.
 ## Instructions
