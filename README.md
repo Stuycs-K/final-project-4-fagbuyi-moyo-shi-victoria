@@ -18,3 +18,10 @@ Shortcuts:
 'Z' - Gives player 100 points  
 'Q' - Quits game
 
+Link:  
+https://drive.google.com/file/d/1hm5LmkCiT3IUIq2X1hWnFQdbWBBKzKij/view?usp=drive_link 
+
+Bugs:  
+Game gets laggy at higher waves  
+Video looks really laggy but its actually not that laggy 
+
