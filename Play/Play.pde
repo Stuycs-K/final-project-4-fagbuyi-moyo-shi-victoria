@@ -46,12 +46,13 @@ void draw()
   add();
   for (Background ba : back){
   ba.move();
+  text(score, 30, 30);
   }
   
 
 
   if (millis() < 2000) 
-    menu("Wave 1","");
+    menu("Space Invaders","Wave 1");
   
 
   else
@@ -78,6 +79,12 @@ void draw()
    // if (key == 'j')player.loseHealth(100);
       if (key== 'r')
     enemies.clear();
+    if(key=='1'&&mode!=0&&score>30&&player.health<10){
+    player.health+=5;
+    score-=30;
+    }
+    
+    
 
   //ad this to relase and maybe maybe a timer for spamming
 

@@ -7,7 +7,7 @@ public void healthBar(Spaceship player)
   rect(loc.x, loc.y + 180, 100, 15, 6);
   noStroke();
   fill(45, 237, 88);
-  rect(loc.x, loc.y + 181, health, 14, 6);
+  rect(loc.x, loc.y + 181, health*20, 14, 6);
 }
 
 void gameOver()
@@ -97,7 +97,6 @@ void runGame()
     player.bullets.clear();
     mode=1;
     wave=1;
-      score=0;
   player.health=100;
   }
   

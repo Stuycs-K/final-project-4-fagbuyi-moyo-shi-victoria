@@ -120,7 +120,7 @@ public class Spaceship
 
     color c = color(0, 0, 0);
     fill(0);
-    circle(position.x, position.y, 100);
+    //circle(position.x, position.y, 100);
 
   }
   
