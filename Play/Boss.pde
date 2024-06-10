@@ -12,25 +12,19 @@ int xSpawn, ySpawn;
       super();
        bullets=new ArrayList<Bullet>();
    imageS=loadImage("boss.png");
-    health = 500; // assuming 100 is max health
+    health = 500;
     position = new PVector(0 + 300, 0 + 100);
     xSpawn=300;
-    ySpawn=100;
-   // image(imageS,position.x, position.y,1000,700);
-
-     
+    ySpawn=100; 
   }
     public Boss(int x,int y)
     {
       super();
    imageS=loadImage("boss.png");
-    health = 500; // assuming 100 is max health
+    health = 500;
     position = new PVector(x,y);
-
         xSpawn=x;
     ySpawn=y;
-
-     
   }
   
   
@@ -61,13 +55,9 @@ int xSpawn, ySpawn;
 
 }
 
-  
   void display(){
     image(imageS,25,-150,900,600);
-   this.bullets = place.allMoveEnemy(this.bullets);}
+   this.bullets = place.allMoveEnemy(this.bullets);
+ }
    
-    
-    
-    void move(){
-    }
 }
