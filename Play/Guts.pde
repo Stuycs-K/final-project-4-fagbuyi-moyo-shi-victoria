@@ -49,6 +49,7 @@ void menu(String s1,String s2)
 
 void runGame()
 {
+  if(mode==0){
   if(enemies.size()==0){
     waveOver=true;
     wave++;}
@@ -91,6 +92,63 @@ void runGame()
     player.bullets.clear();
     wave7();
   }
+       if (wave==8&&waveOver){
+    waveOver=true;
+    player.bullets.clear();
+    mode=1;
+    wave=1;
+      score=0;
+  player.health=100;
+  }
+  
+  }
+  else{
+
+    
+  if (wave==1&&waveOver){
+    waveOver=false;
+    wave1();
+  }
+  
+    if (wave==2&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave2();
+    
+  }
+      if (wave==3&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave3();
+  }
+  
+    if (wave==4&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave4();
+  }
+      if (wave==5&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave5();
+  }
+        if (wave==6&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave6();
+  }
+          if (wave==7&&waveOver){
+    waveOver=false;
+    player.bullets.clear();
+    wave=0;
+          }
+      if(enemies.size()==0){
+    waveOver=true;
+    wave++;}
+  
+  }
+
+
   
   healthBar(player);
   player.move();
@@ -109,8 +167,11 @@ void runGame()
   {
     gameOver();
     stop();
+    
   }
-  }
+
+}
+  
 
 void drawWave(int num){
   int temp=millis();
@@ -151,8 +212,11 @@ void wave5(){
 
 }
 void wave6(){
-   enemies.add(new E3(50,0));
-   enemies.add(new E3(600,0));
+   enemies.add( new E2(100,0));
+   enemies.add(new E2(700,0));
+   enemies.add( new E3(100,200));
+   enemies.add(new E3(400,200));
+   enemies.add(new E2(700,200));
 
 }
 
