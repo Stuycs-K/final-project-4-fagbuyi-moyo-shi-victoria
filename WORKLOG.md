@@ -48,6 +48,10 @@ generalize despawn function and filled in e3 class, got it to shoot, remove png 
 ### date 6/6
 modify e3 shooting, created bullets that tracks player, worked on rotation of png
 
+### date 6/8
+finshed e2 and e3, tried to fix lag caused by e3
+
+
 ## GROUP MEMBER 2 (moyo)
 
 ### date 05/22
