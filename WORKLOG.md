@@ -51,6 +51,10 @@ modify e3 shooting, created bullets that tracks player, worked on rotation of pn
 ### date 6/8
 finshed e2 and e3, tried to fix lag caused by e3
 
+### date 6/9
+finished final boss, created different waves, created infinite waves mode and menu screen, added powerups 
+
+
 
 ## GROUP MEMBER 2 (moyo)
 
