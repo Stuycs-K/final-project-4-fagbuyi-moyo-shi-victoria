@@ -13,6 +13,8 @@ int xSpawn, ySpawn;
 
     health = 10; // assuming 100 is max health
 
+
+
     position = new PVector(0 + 300, 0 + 100);
     xSpawn=300;
     ySpawn=100;
