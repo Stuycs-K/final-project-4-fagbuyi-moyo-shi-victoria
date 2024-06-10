@@ -3,31 +3,36 @@ ArrayList<Bullet> bullets2;
 E1 enemy1;
 E1 enemy2;
 E1 enemy3;
-ArrayList<E1> enemies=new ArrayList<E1>();
+Enemy e =new Enemy();
+ArrayList<Enemy> enemies=new ArrayList<Enemy>();
 Player player;
 int countdown;
 Background b;
 ArrayList<Background> back=new ArrayList<Background>();
 int score;
 
+
 //we should have a game class so draw and setup and less chunky
 void setup()
 {
-
   size(950, 1000);
+  player = new Player();
   bullets2 = new ArrayList<Bullet>();
   place = new Bullet(1, new PVector(600, 100));
+
   //moving backgroud somewhere yeah
-  player = new Player();
- enemy1 = new E1();
-   enemies.add( new E1(100,100));
-   enemies.add(new E1(400,100));
-   enemies.add(new E1(700,100));
   
+ enemy1 = new E1();
+ //enemies.add( new E1(100,100));
+  // enemies.add(new E1(400,100));
+   //enemies.add(new E1(700,100));
+   //enemies.add(new E3(300,300));
+   enemies.add(new Boss(0,0));
+  
+
   countdown = 600;
   b=new Background();
 }
-
 
 void healthBar(Spaceship player)
 {
@@ -54,7 +59,8 @@ void healthBar(Spaceship player)
 //      return live;
 //    }
 
-void add(){
+void add()
+{
 if(frameCount%5==0){
 back.add(new Background());
 }
@@ -80,7 +86,6 @@ void draw()
 {
 
   background(0);
-  //bk();
   fill(255);
   add();
   for (Background ba : back){
@@ -94,18 +99,17 @@ void draw()
   player.display();
     for (Enemy en : enemies)
     {
-      en.move();
+     en.move();
       en.display();
       en.direction();
       place.damagePlayer(en.getAmmo(), player);
       place.applyDamage(player.getAmmo(), en);
     }
-  enemies = enemy1.despawn(enemies);
+  enemies = e.despawn(enemies);
   if (player.getHealth() == 0)
   {
     gameOver();
     stop();
-    // and then death screen
   }
   //player.showHb();
 }

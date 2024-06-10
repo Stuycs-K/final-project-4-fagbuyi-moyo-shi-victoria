@@ -21,7 +21,7 @@ int xSpawn, ySpawn;
     {
       super();
    imageS=loadImage("enemy1.png");
-    health = 100; // assuming 100 is max health
+    health = 20; // assuming 100 is max health
     position = new PVector(x,y);
 
         xSpawn=x;
@@ -89,22 +89,7 @@ int xSpawn, ySpawn;
                  
     }
     
-    public ArrayList<E1> despawn(ArrayList<E1> en)
-    {
-      ArrayList<E1> live =  new ArrayList<E1>();
-      for (E1 ene : en)
-      {
-        if (ene.getHealth() != 0)
-        {
-          live.add(ene);
-        }
-        else
-        {
-          score += 3;
-        }
-      }
-      return live;
-    }
+
     
-  
+    
 }

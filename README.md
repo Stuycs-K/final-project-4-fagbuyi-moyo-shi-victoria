@@ -2,5 +2,8 @@
 # APCS2 Final Project
 THIS DOCUMENT IS REQUIRED
 ## Group Info
+Victoria Shi and Moyo Fagbuyi
 ## Overview
 ## Instructions
+WASD- Move
+Space- Shoot
