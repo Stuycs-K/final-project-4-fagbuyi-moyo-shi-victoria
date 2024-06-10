@@ -10,26 +10,28 @@ int xSpawn, ySpawn;
       super();
        bullets=new ArrayList<Bullet>();
    imageS=loadImage("e2.png");
+<<<<<<< HEAD
     health = 10; // assuming 100 is max health
+=======
+    health = 100;
+>>>>>>> 961f80ad1fd455667242f34a07cdc0b9f4294e5c
     position = new PVector(0 + 300, 0 + 100);
     xSpawn=300;
     ySpawn=100;
-    Hitbox =  new int[]{200, 200};
-
-
      
   }
     public E2(int x,int y)
     {
       super();
    imageS=loadImage("e2.png");
+<<<<<<< HEAD
     health = 10; // assuming 100 is max health
+=======
+    health = 100;
+>>>>>>> 961f80ad1fd455667242f34a07cdc0b9f4294e5c
     position = new PVector(x,y);
-
         xSpawn=x;
-    ySpawn=y;
-
-     
+    ySpawn=y;     
   }
   
   
@@ -49,7 +51,6 @@ int xSpawn, ySpawn;
   else if (millis() > time + 1000)
   {
     temp=int(random(0,4));
-           //bullets.add(new Bullet(new PVector(position.x,position.y+200)));
     time = millis();
   }
     else if (millis() > time2 + 500)
@@ -69,12 +70,6 @@ int xSpawn, ySpawn;
     void move(){
 
       int moving=0;
-      //int temp=1;
-      // if(frameCount % 20 ==0)
-// int temp=int(random(0,4));
-    
-     //   while(frameCount<frameCount+120){
-         //for(int i=0;i<200;i++){
         if(temp==0)
         position.x-=3;
          if(temp==1)
@@ -84,12 +79,7 @@ int xSpawn, ySpawn;
         if(temp==3)
         position.y+=3;
      image(imageS,position.x, position.y);
-
-
-   this.bullets = place.allMove1(this.bullets);
-     // }}
-                 
-
+   this.bullets = place.allMoveEnemy(this.bullets);
     }
    
 }

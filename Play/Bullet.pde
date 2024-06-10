@@ -16,15 +16,14 @@ public class Bullet
     damage = 5;
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
     tracking=false;
- //<>// //<>//
-    if(num==1)
+    if(num==1) //<>//
     photo = loadImage("blueBullet.png");
-    
+ 
     if(num==2)
     photo = loadImage("redBullet.png");
     if(num==3){
-    photo = loadImage("redBullet.png"); //<>// //<>//
-        spawnLoc=spawnPoint;
+    photo = loadImage("redBullet.png"); 
+        spawnLoc=spawnPoint; //<>//
     playerLoc=player.position;
     temp=PVector.sub(playerLoc,spawnLoc);
     factor=int(temp.mag()/5);
@@ -32,44 +31,29 @@ public class Bullet
     }
     photo.resize(80,80);
     alive = true;
-  } //<>// //<>// //<>// //<>// //<>//
-  //  public Bullet(PVector spawnPoint) //<>// //<>//
-  //{ //<>// //<>//
-  //  pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
-  //  photo = loadImage("bullet.png");
-  //  photo.resize(40, 40);
-  //}
-
-   //<>// //<>// //<>//
-  public Bullet(PVector spawnPoint, int dam)
-  {
+  } 
+ //<>//
+  public Bullet(PVector spawnPoint, int dam) //<>//
+  { //<>//
     damage = dam;
     pos = new PVector(spawnPoint.x + 80, spawnPoint.y + 10);
     photo = loadImage("bullet.png");
     photo.resize(40, 40);
      alive = true;
   }
-  public void move() //<>// //<>// idk why this is here but ill leave it //<>// //<>//
+  public void move()
   {
     pos.set(pos.x, pos.y - 5);
     image(photo, pos.x, pos.y, 70, 70);
   }
   
-    public void moveEnemy1()
+    public void moveEnemy()
   {
-    if(tracking){
-     
-      
-      
-       //imageMode(CENTER);
-    //pushMatrix();
-   // translate(spawnLoc.x,spawnLoc.y);
-    //rotate(-atan(temp.y/temp.x));
+    if(tracking)
+    {
+
     pos.set(pos.x+(temp.x/factor), pos.y + (temp.y/factor));
      image(photo, pos.x, pos.y, 70, 70);
-      
-      
-      //popMatrix();
     }
     else{
     pos.set(pos.x, pos.y + 5);
@@ -98,7 +82,7 @@ public class Bullet
     return live;
   }
   
-    public ArrayList<Bullet> allMove1(ArrayList<Bullet> bulls)
+    public ArrayList<Bullet> allMoveEnemy(ArrayList<Bullet> bulls)
   {
     ArrayList<Bullet> live = new ArrayList<Bullet>();
     for (int i = 0; i < bulls.size(); i++)
@@ -107,7 +91,7 @@ public class Bullet
       if (bull.getStatus()&&bull.pos.y<height) 
 
       {
-        bull.moveEnemy1();
+        bull.moveEnemy();
         live.add(bull);
       }
       else
@@ -129,7 +113,6 @@ public class Bullet
       {
         if (tar.getPos().x + 25  <= bull.pos.x && abs(tar.getPos().x - bull.pos.x) <= dims[0] - 90 && tar.getPos().y < bull.pos.y && abs(tar.getPos().y -  bull.pos.y) <= dims[1] - 25) // will have to change based on um enenmy size
         {
-          //System.out.println("pop2");
          tar.loseHealth(damage);
          bull.setStatus(false);
         } 
@@ -138,7 +121,6 @@ public class Bullet
       {
         if (tar.getPos().x <= bull.pos.x && abs(tar.getPos().x - bull.pos.x) <= dims[0] - 125 && tar.getPos().y < bull.pos.y && abs(tar.getPos().y -  bull.pos.y) <= dims[1] - 120) // will have to change based on um enenmy size
         {
-          //System.out.println("pop2");
          tar.loseHealth(damage);
          bull.setStatus(false);
         } 
@@ -147,7 +129,6 @@ public class Bullet
       {
          if (tar.getPos().x  <= bull.pos.x && abs(tar.getPos().x - bull.pos.x) <= 900 && tar.getPos().y < bull.pos.y && abs(tar.getPos().y -  bull.pos.y) <= 305) // will have to change based on um enenmy size
         {
-          //System.out.println("pop2");
          tar.loseHealth(damage);
          bull.setStatus(false);
         } 
@@ -172,7 +153,7 @@ public class Bullet
   }
   
   
-  public boolean getStatus() //also might be unneeded
+  public boolean getStatus()
   {
     return alive;
   }
@@ -180,9 +161,5 @@ public class Bullet
   public void setStatus(boolean stat)
   {
     alive = stat;
-  }
-  public void setDam(int a)
-  {
-    damage = a;
   }
 }
