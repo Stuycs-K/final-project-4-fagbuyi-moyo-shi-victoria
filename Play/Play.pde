@@ -69,6 +69,10 @@ void draw()
 
     if(key=='1'&&mode!=0&&score>30&&player.health<10){
     player.health+=5;
+    if (player.health >= 10)
+    {
+      player.health = 10;
+    }
     score-=30;
     }
          if(key=='2'&&mode!=0&&score>=100){

@@ -7,7 +7,7 @@ public void healthBar(Spaceship player)
   rect(loc.x, loc.y + 180, 100, 15, 6);
   noStroke();
   fill(45, 237, 88);
-  rect(loc.x, loc.y + 181, health*20, 14, 6);
+  rect(loc.x, loc.y + 181, health*10, 14, 6);
 }
 
 void gameOver()
@@ -164,6 +164,7 @@ void runGame()
   enemies = e.despawn(enemies);
   if (player.getHealth() == 0)
   {
+    healthBar(player);
     gameOver();
     stop();
     
