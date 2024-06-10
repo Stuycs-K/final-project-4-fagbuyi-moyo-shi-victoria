@@ -23,7 +23,7 @@ public class Player extends Spaceship{
       if(sPressed==true)
       position.y+=10;
     
-      if(spacePressed==true&&millis() > time + 200){
+      if(spacePressed==true&&millis() > time + 250){
       bullets.add(player.shoot());
       time=millis();
       }
