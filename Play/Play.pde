@@ -72,8 +72,8 @@ void draw()
     {
       enemies = e.massDespawn(enemies);
       score -= 100;
-    }
 
+    }
   }
     
       void keyReleased(){

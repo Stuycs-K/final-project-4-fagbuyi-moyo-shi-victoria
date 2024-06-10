@@ -20,7 +20,10 @@ public class Enemy extends Spaceship{
           score+=5;
            else if(ene instanceof E3)
           score+=10;
+          else if(ene instanceof Boss)
+          score+=50;
         }
+        
       }
       return live;
     }

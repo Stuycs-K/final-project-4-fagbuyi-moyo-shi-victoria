@@ -10,7 +10,13 @@ int xSpawn, ySpawn;
       super();
        bullets=new ArrayList<Bullet>();
    imageS=loadImage("e2.png");
+<<<<<<< HEAD
     health = 10; // assuming 100 is max health
+=======
+
+    health = 10; // assuming 100 is max health
+
+>>>>>>> 73268d03d5b5d668722a164e1b34271368033dde
     position = new PVector(0 + 300, 0 + 100);
     xSpawn=300;
     ySpawn=100;
@@ -20,7 +26,13 @@ int xSpawn, ySpawn;
     {
       super();
    imageS=loadImage("e2.png");
+<<<<<<< HEAD
     health = 10; // assuming 100 is max health
+=======
+
+    health = 10; // assuming 100 is max health
+
+>>>>>>> 73268d03d5b5d668722a164e1b34271368033dde
     position = new PVector(x,y);
         xSpawn=x;
     ySpawn=y;     
