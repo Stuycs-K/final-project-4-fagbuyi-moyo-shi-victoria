@@ -12,7 +12,7 @@ int xSpawn, ySpawn;
       super();
        bullets=new ArrayList<Bullet>();
    imageS=loadImage("e3.png");
-    health = 1; // assuming 100 is max health
+    health = 50; // assuming 100 is max health
     position = new PVector(0 + 300, 0 + 100);
     xSpawn=300;
     ySpawn=100;
@@ -23,7 +23,7 @@ int xSpawn, ySpawn;
     {
       super();
    imageS=loadImage("e3.png");
-    health = 1; // assuming 100 is max health
+    health = 50; // assuming 100 is max health
     position = new PVector(x,y);
 
         xSpawn=x;
@@ -52,7 +52,9 @@ int xSpawn, ySpawn;
            //bullets.add(new Bullet(new PVector(position.x,position.y+200)));
     time = millis();
   }
-    else if (millis() > time2 + 2000)
+
+    else if (millis() > time2 + 500)
+
   {
          // bullets.add(new Bullet(2,new PVector(position.x+110,position.y+200)));
        // bullets.add(new Bullet(2,new PVector(position.x+160,position.y+200)));

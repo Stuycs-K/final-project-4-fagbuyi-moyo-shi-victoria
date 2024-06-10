@@ -14,11 +14,11 @@ int score;
 //we should have a game class so draw and setup and less chunky
 void setup()
 {
-  //imageMode(CENTER);
   size(950, 1000);
   player = new Player();
   bullets2 = new ArrayList<Bullet>();
   place = new Bullet(1, new PVector(600, 100));
+
   //moving backgroud somewhere yeah
   
  enemy1 = new E1();
@@ -27,27 +27,9 @@ void setup()
    enemies.add(new E1(700,100));
    enemies.add(new E3(300,300));
   
+
   countdown = 600;
   b=new Background();
-}
-
-void bk()
-{
-  // so live make the stars jiggle, so like dont use random
-  //if (countdown == 600)
-  //{
-    background(200);
-     fill(198, 22, 247);
-    stroke(15);
-    int x = 5;
-    int y = 5;
-    for (int i = 0; i < 100; i++)
-    {
-      int size = (int) random(80);
-      rect(random(0, width - 50), random(0, height- 50), size, size / 3);
-    //}
-  }
-  //random(12);
 }
 
 void healthBar(Spaceship player)
@@ -75,7 +57,8 @@ void healthBar(Spaceship player)
 //      return live;
 //    }
 
-void add(){
+void add()
+{
 if(frameCount%5==0){
 back.add(new Background());
 }
@@ -101,7 +84,6 @@ void draw()
 {
 
   background(0);
-  //bk();
   fill(255);
   add();
   for (Background ba : back){
@@ -126,7 +108,6 @@ void draw()
   {
     gameOver();
     stop();
-    // and then death screen
   }
 }
 
