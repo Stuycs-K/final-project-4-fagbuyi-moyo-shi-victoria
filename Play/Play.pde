@@ -33,7 +33,7 @@ void draw()
   for (Background ba : back)
   {
   ba.move();
-  text(score, 30, 30);
+  text(score, 50, 30);
   }
   
 
@@ -63,10 +63,18 @@ void draw()
     spacePressed=true; 
       if (key== 'r')
     enemies.clear();
+          if (key== 'z')
+    score+=100;
 
     if(key=='1'&&mode!=0&&score>30&&player.health<10){
     player.health+=5;
     score-=30;
+    }
+    
+     if(key=='3'&&mode!=0&&score>=100){
+    for (Enemy en : enemies)
+    {en.bullets.clear();}
+    score-=100;
     }
     
     
