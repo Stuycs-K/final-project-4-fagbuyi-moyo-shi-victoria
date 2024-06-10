@@ -46,23 +46,18 @@ int xSpawn, ySpawn;
     else if(position.y>=height/4){
     temp=2;
     time = millis();}
-  else if (millis() > time + 1000)
-  {
-    temp=int(random(0,4));
-           //bullets.add(new Bullet(new PVector(position.x,position.y+200)));
-    time = millis();
-  }
+
 
     else if (millis() > time2 + 500)
 
   {
-         // bullets.add(new Bullet(2,new PVector(position.x+110,position.y+200)));
-       // bullets.add(new Bullet(2,new PVector(position.x+160,position.y+200)));
+          bullets.add(new Bullet(2,new PVector(position.x+110,position.y+200)));
+        bullets.add(new Bullet(2,new PVector(position.x+160,position.y+200)));
     time2 = millis();
   }
       else if (millis() > time3 + 1000)
   {
-            //bullets.add(new Bullet(3,new PVector(position.x-55,position.y+200)));
+            bullets.add(new Bullet(3,new PVector(position.x-55,position.y+200)));
     time3 = millis();
   }
 
