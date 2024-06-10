@@ -29,7 +29,7 @@ public class Spaceship
     shooting = false;
     ///
     bullets = new ArrayList<Bullet>();
-    Hitbox = new int[2];
+    Hitbox = new int[4];
 
   }
   

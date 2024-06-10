@@ -102,7 +102,7 @@ void draw()
      en.move();
       en.display();
       en.direction();
-      place.applyDamage(en.getAmmo(), player);
+      place.damagePlayer(en.getAmmo(), player);
       place.applyDamage(player.getAmmo(), en);
     }
   enemies = e.despawn(enemies);
@@ -111,6 +111,7 @@ void draw()
     gameOver();
     stop();
   }
+  //player.showHb();
 }
 
 
